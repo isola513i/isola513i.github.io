@@ -24,10 +24,9 @@
 			<!-- Center: Links -->
 			<ul class="nav-links" id="nav-links">
 				<li><a href="#about">About Me</a></li>
-				<li><a href="#skills">Skills</a></li>
 				<li><a href="#projects">Project</a></li>
+				<li><a href="#skills">Skills</a></li>
 				<li><a href="#contact">Contact Me</a></li>
-				<!-- FCC requires an external profile link that opens in new tab -->
 				<li class="hide-desktop">
 					<a
 						id="profile-link"
@@ -219,6 +218,32 @@
 							</div>
 						</div>
 					</article>
+
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Local Weather App</h3>
+							<p class="card-text">
+								FCC Project: Shows local weather via Geolocation API. Toggle
+								C°/F°.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/local-weather-app"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://isola513i.github.io/local-weather-app/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
 				</div>
 			</section>
 
@@ -305,14 +330,12 @@
 				[...document.querySelectorAll('#navbar a[href^="#"]')].map((a) => [
 					a.getAttribute("href").slice(1),
 					a,
-				]) // id => <a>
+				])
 			);
 
-			// ชดเชยความสูง navbar เพื่อให้ trigger ตอนหัวข้อชนขอบบน
 			const NAV_HEIGHT = 84;
 			const io = new IntersectionObserver(
 				(entries) => {
-					// หาอันที่เด่นสุดใน viewport
 					const visible = entries
 						.filter((e) => e.isIntersecting)
 						.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -320,9 +343,7 @@
 					if (!visible) return;
 
 					const id = visible.target.id;
-					// clear ทั้งหมดก่อน
 					navMap.forEach((a) => a.removeAttribute("aria-current"));
-					// highlight ตัวที่ตรง
 					if (navMap.has(id))
 						navMap.get(id).setAttribute("aria-current", "page");
 				},
@@ -335,11 +356,18 @@
 
 			sections.forEach((sec) => io.observe(sec));
 
-			// ===== init =====
 			document.getElementById("year").textContent = String(
 				new Date().getFullYear()
 			);
 			window.addEventListener("DOMContentLoaded", setActiveByHash);
+
+			const nav = document.getElementById("navbar");
+			const onScrollBlend = () => {
+				if (window.scrollY > 24) nav.classList.add("is-scrolled");
+				else nav.classList.remove("is-scrolled");
+			};
+			window.addEventListener("scroll", onScrollBlend);
+			window.addEventListener("DOMContentLoaded", onScrollBlend);
 		</script>
 	</body>
 </html>

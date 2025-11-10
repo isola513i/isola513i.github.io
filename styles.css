@@ -362,9 +362,29 @@ body {
 		--ring: rgba(59, 130, 246, 0.35);
 	}
 	.nav {
-		background: rgba(255, 255, 255, 0.85);
-		border-bottom-color: rgba(15, 23, 42, 0.06);
+		position: fixed;
+		inset: 0 0 auto 0;
+		height: 72px;
+		z-index: 999;
+		background: transparent;
+		backdrop-filter: blur(6px) saturate(120%);
+		border-bottom: 0;
+		box-shadow: none;
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		align-items: center;
+		gap: 12px;
+		padding: 0 20px;
+		max-width: 1200px;
+		margin-inline: auto;
 	}
+
+	.nav.is-scrolled {
+		background: color-mix(in oklab, var(--bg) 92%, white 8%);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+	}
+
 	body {
 		background: radial-gradient(
 				900px 520px at 70% -10%,
