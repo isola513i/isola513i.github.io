@@ -145,6 +145,31 @@
 							</div>
 						</div>
 					</article>
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">25 + 5 Clock</h3>
+							<p class="card-text">
+								FCC Frontend Libraries — React 17 single-file. Session/Break
+								timer, sound, reset, and test-ready.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn"
+									href="https://isola513i.github.io/25-5-clock/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/25-5-clock"
+									target="_blank"
+									rel="noopener"
+									>Source</a
+								>
+							</div>
+						</div>
+					</article>
 				</div>
 			</section>
 			<section id="about" class="section alt">
@@ -206,6 +231,16 @@
 			document.getElementById("year").textContent = String(
 				new Date().getFullYear()
 			);
+			// highlight nav link on hash change
+			const setActive = () => {
+				document.querySelectorAll('#navbar a[href^="#"]').forEach((a) => {
+					a.removeAttribute("aria-current");
+					if (a.getAttribute("href") === location.hash)
+						a.setAttribute("aria-current", "page");
+				});
+			};
+			window.addEventListener("hashchange", setActive);
+			window.addEventListener("DOMContentLoaded", setActive);
 		</script>
 	</body>
 </html>
