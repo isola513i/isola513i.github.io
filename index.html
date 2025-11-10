@@ -4,35 +4,31 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Nattapat - Portfolio</title>
-		<!-- FCC note: external stylesheet link -->
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
 	<body>
-		<!-- Navbar must always be at the top and contain at least one link -->
+		<!-- ================= NAVBAR ================= -->
 		<nav id="navbar" class="nav">
-			<a class="brand" href="#welcome-section" aria-label="Go to Welcome"
-				>Nattapat</a
-			>
-			<button
-				class="nav-toggle"
-				aria-label="Toggle navigation"
-				aria-expanded="false"
-			>
-				☰
-			</button>
-			<ul class="nav-links">
-				<li><a href="#welcome-section">Home</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<!-- Required external profile link that opens in a new tab -->
-				<li>
+			<!-- Left: Brand -->
+			<a class="brand" href="#welcome-section" aria-label="Go to Welcome">
+				<span class="brand-mark">P</span>
+				<span class="brand-text">Personal</span>
+			</a>
+
+			<!-- Center: Links -->
+			<ul class="nav-links" id="nav-links">
+				<li><a href="#about">About Me</a></li>
+				<li><a href="#skills">Skills</a></li>
+				<li><a href="#projects">Project</a></li>
+				<li><a href="#contact">Contact Me</a></li>
+				<!-- FCC requires an external profile link that opens in new tab -->
+				<li class="hide-desktop">
 					<a
 						id="profile-link"
 						href="https://github.com/isola513i"
@@ -42,12 +38,32 @@
 					>
 				</li>
 			</ul>
+
+			<!-- Right: Resume button -->
+			<a
+				class="resume-btn"
+				href="/Nattapat-Resume.pdf"
+				target="_blank"
+				rel="noopener"
+			>
+				Resume <span aria-hidden="true">↧</span>
+			</a>
+
+			<!-- Mobile toggle -->
+			<button
+				class="nav-toggle"
+				aria-label="Toggle navigation"
+				aria-expanded="false"
+				aria-controls="nav-links"
+			>
+				☰
+			</button>
 		</nav>
 
-		<!-- Welcome section: height must equal viewport height, contain an h1 -->
+		<!-- ================= HERO ================= -->
 		<header id="welcome-section" class="hero" role="banner">
 			<div class="hero-inner">
-				<h1>Hi, I’m Ice — Full‑Stack Learner</h1>
+				<h1>Hi, I’m Ice — Full-Stack Developer</h1>
 				<p class="lead">
 					Building with <strong>Vue 3</strong>, <strong>Tailwind</strong>,
 					<strong>Spring Boot</strong>, and <strong>MySQL</strong>.
@@ -56,16 +72,17 @@
 			</div>
 			<div class="bg-shape" aria-hidden="true"></div>
 		</header>
-		<!-- Projects section: must have id="projects" and at least one .project-tile with a link -->
+
+		<!-- ================= MAIN ================= -->
 		<main>
 			<section id="projects" class="section">
 				<h2 class="section-title">Featured Projects</h2>
 				<div class="grid">
 					<article class="card project-tile">
 						<div class="card-body">
-							<h3 class="card-title">ITB‑MShop</h3>
+							<h3 class="card-title">ITB-MShop</h3>
 							<p class="card-text">
-								Full‑stack e‑commerce (Vue3 + Spring Boot + MySQL). Includes JWT
+								Full-stack e-commerce (Vue3 + Spring Boot + MySQL). Includes JWT
 								auth, brands, sale items, image handling.
 							</p>
 							<div class="card-actions">
@@ -79,29 +96,33 @@
 								<a
 									class="btn ghost"
 									href="https://intproj24.sit.kmutt.ac.th/ssi4/"
-									aria-disabled="true"
+									target="_blank"
+									rel="noopener"
 									>Live Demo</a
 								>
 							</div>
 						</div>
 					</article>
+
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">Meez</h3>
 							<p class="card-text">
-								Mobile‑first room booking: calendar UI, availability checks, and
-								toasts for success/failure.
+								Mobile-first room booking: calendar UI, availability checks,
+								toasts, soft refresh.
 							</p>
 							<div class="card-actions">
 								<a
 									class="btn"
 									href="https://github.com/isola513i/Meez-app"
-									aria-disabled="true"
-									>View Repo
-								</a>
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
 							</div>
 						</div>
 					</article>
+
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">MaeKung Cafe</h3>
@@ -114,18 +135,19 @@
 								<a
 									class="btn ghost"
 									href="https://maps.app.goo.gl/kVqCqVAgW6BkqTv56"
-									aria-disabled="true"
+									target="_blank"
+									rel="noopener"
 									>Location</a
 								>
 							</div>
 						</div>
 					</article>
+
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">Random Quote Machine</h3>
 							<p class="card-text">
-								FCC Frontend Libraries project (React 17, vanilla CSS). Random
-								quotes + Tweet intent.
+								FCC Frontend Libraries — React 17. Random quotes + Tweet intent.
 							</p>
 							<div class="card-actions">
 								<a
@@ -145,14 +167,22 @@
 							</div>
 						</div>
 					</article>
+
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">25 + 5 Clock</h3>
 							<p class="card-text">
-								FCC Frontend Libraries — React 17 single-file. Session/Break
-								timer, sound, reset, and test-ready.
+								FCC Frontend Libraries — React 17. Session/Break timer, sound,
+								reset, test-ready.
 							</p>
 							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/25-5-clock"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
 								<a
 									class="btn"
 									href="https://isola513i.github.io/25-5-clock/"
@@ -160,22 +190,16 @@
 									rel="noopener"
 									>Live Demo</a
 								>
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/25-5-clock"
-									target="_blank"
-									rel="noopener"
-									>Source</a
-								>
 							</div>
 						</div>
 					</article>
+
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">JavaScript Calculator</h3>
 							<p class="card-text">
-								FCC Frontend Libraries — React 17 single-file. Basic calculator
-								functionality with clear, decimal, and operator precedence.
+								FCC Frontend Libraries — React 17. Calculator with decimal &
+								operator precedence.
 							</p>
 							<div class="card-actions">
 								<a
@@ -192,15 +216,23 @@
 									rel="noopener"
 									>Live Demo</a
 								>
+							</div>
+						</div>
+					</article>
 				</div>
 			</section>
+
 			<section id="about" class="section alt">
 				<h2 class="section-title">About</h2>
 				<p>
-					Third‑year IT student @KMUTT (SIT). Focused on web back‑to‑front
+					Third-year IT student @ KMUTT (SIT). Focused on web back-to-front
 					workflows, REST, database design, and product UX. Passionate about
 					learning by building and shipping.
 				</p>
+			</section>
+
+			<section id="skills" class="section">
+				<h2 class="section-title">Skills</h2>
 				<ul class="tags">
 					<li>Vue 3</li>
 					<li>Tailwind</li>
@@ -210,13 +242,17 @@
 					<li>JWT</li>
 				</ul>
 			</section>
+
 			<section id="contact" class="section">
 				<h2 class="section-title">Contact</h2>
 				<p>Open for internships and collabs. Hit me up:</p>
 				<ul class="contact-list">
-					<li><a href="mailto:you@example.com">you@example.com</a></li>
+					<li>
+						<a href="mailto:nattapat.lamn@gmail.com">nattapat.lamn@gmail.com</a>
+					</li>
 					<li>
 						<a
+							id="profile-link"
 							href="https://github.com/isola513i"
 							target="_blank"
 							rel="noopener"
@@ -234,15 +270,17 @@
 				</ul>
 			</section>
 		</main>
+
 		<footer class="footer">
 			<small
 				>© <span id="year"></span> Ice. Built with love and vanilla CSS.</small
 			>
 		</footer>
+
 		<script>
-			// Mobile nav toggle (no external libs)
+			// Mobile nav toggle
 			const btn = document.querySelector(".nav-toggle");
-			const links = document.querySelector(".nav-links");
+			const links = document.getElementById("nav-links");
 			btn?.addEventListener("click", () => {
 				const expanded = btn.getAttribute("aria-expanded") === "true";
 				btn.setAttribute("aria-expanded", String(!expanded));
@@ -253,7 +291,8 @@
 			document.getElementById("year").textContent = String(
 				new Date().getFullYear()
 			);
-			// highlight nav link on hash change
+
+			// Active link when hash changes
 			const setActive = () => {
 				document.querySelectorAll('#navbar a[href^="#"]').forEach((a) => {
 					a.removeAttribute("aria-current");
@@ -264,5 +303,8 @@
 			window.addEventListener("hashchange", setActive);
 			window.addEventListener("DOMContentLoaded", setActive);
 		</script>
+
+		<!-- NOTE: ถ้าจะใช้ FCC test ให้ใส่สคริปต์นี้ (โปรดคอมเมนต์ออกเมื่อต้องการ deploy แบบ production) -->
+		<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 	</body>
 </html>
