@@ -278,7 +278,7 @@
 		</footer>
 
 		<script>
-			// Mobile nav toggle
+			// ===== Mobile nav toggle =====
 			const btn = document.querySelector(".nav-toggle");
 			const links = document.getElementById("nav-links");
 			btn?.addEventListener("click", () => {
@@ -287,24 +287,59 @@
 				links.classList.toggle("open");
 			});
 
-			// Update footer year
-			document.getElementById("year").textContent = String(
-				new Date().getFullYear()
-			);
-
-			// Active link when hash changes
-			const setActive = () => {
+			// ===== Active state on click/hash change (fallback) =====
+			const setActiveByHash = () => {
 				document.querySelectorAll('#navbar a[href^="#"]').forEach((a) => {
 					a.removeAttribute("aria-current");
 					if (a.getAttribute("href") === location.hash)
 						a.setAttribute("aria-current", "page");
 				});
 			};
-			window.addEventListener("hashchange", setActive);
-			window.addEventListener("DOMContentLoaded", setActive);
-		</script>
+			window.addEventListener("hashchange", setActiveByHash);
 
-		<!-- NOTE: ถ้าจะใช้ FCC test ให้ใส่สคริปต์นี้ (โปรดคอมเมนต์ออกเมื่อต้องการ deploy แบบ production) -->
-		<!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+			// ===== Scroll Spy with IntersectionObserver =====
+			const sections = [
+				...document.querySelectorAll("main section, header#welcome-section"),
+			];
+			const navMap = new Map(
+				[...document.querySelectorAll('#navbar a[href^="#"]')].map((a) => [
+					a.getAttribute("href").slice(1),
+					a,
+				]) // id => <a>
+			);
+
+			// ชดเชยความสูง navbar เพื่อให้ trigger ตอนหัวข้อชนขอบบน
+			const NAV_HEIGHT = 84;
+			const io = new IntersectionObserver(
+				(entries) => {
+					// หาอันที่เด่นสุดใน viewport
+					const visible = entries
+						.filter((e) => e.isIntersecting)
+						.sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+					if (!visible) return;
+
+					const id = visible.target.id;
+					// clear ทั้งหมดก่อน
+					navMap.forEach((a) => a.removeAttribute("aria-current"));
+					// highlight ตัวที่ตรง
+					if (navMap.has(id))
+						navMap.get(id).setAttribute("aria-current", "page");
+				},
+				{
+					root: null,
+					threshold: [0.25, 0.6, 0.9],
+					rootMargin: `-${NAV_HEIGHT}px 0px -40% 0px`,
+				}
+			);
+
+			sections.forEach((sec) => io.observe(sec));
+
+			// ===== init =====
+			document.getElementById("year").textContent = String(
+				new Date().getFullYear()
+			);
+			window.addEventListener("DOMContentLoaded", setActiveByHash);
+		</script>
 	</body>
 </html>
