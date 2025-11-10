@@ -14,7 +14,7 @@
 		<link rel="icon" href="/logo.png" type="image/png" />
 	</head>
 	<body>
-		<nav class="nav">
+		<nav class="nav" id="navbar">
 			<a class="brand" href="#welcome-section" aria-label="Go to Welcome">
 				<span class="brand-mark">N</span>
 				<span class="brand-name">Nattapat</span>
@@ -602,13 +602,18 @@
 		</footer>
 
 		<script>
+			// ===== Mobile nav toggle (โค้ดใหม่ที่แก้ไขแล้ว) =====
 			const btn = document.querySelector(".nav-toggle");
 			const links = document.getElementById("nav-links");
 			btn?.addEventListener("click", () => {
+				// เพิ่ม/ลบ class 'active' เพื่อสร้าง animation 'X'
 				btn.classList.toggle("active");
+
+				// เพิ่ม/ลบ class 'open' เพื่อแสดง/ซ่อนเมนู
 				links.classList.toggle("open");
 			});
 
+			// ===== Active state on click/hash change (โค้ดเดิม) =====
 			const setActiveByHash = () => {
 				document.querySelectorAll('#navbar a[href^="#"]').forEach((a) => {
 					a.removeAttribute("aria-current");
@@ -617,6 +622,8 @@
 				});
 			};
 			window.addEventListener("hashchange", setActiveByHash);
+
+			// ===== Scroll Spy with IntersectionObserver (โค้ดเดิม) =====
 			const sections = [
 				...document.querySelectorAll("main section, header#welcome-section"),
 			];
@@ -649,10 +656,15 @@
 			);
 
 			sections.forEach((sec) => io.observe(sec));
+
+			// ===== init (โค้ดเดิม) =====
 			document.getElementById("year").textContent = String(
 				new Date().getFullYear()
 			);
 			window.addEventListener("DOMContentLoaded", setActiveByHash);
+
+			// ===== Navbar Scroll Effect (โค้ดเดิม) =====
+			// (ตอนนี้จะทำงานได้เพราะเราเพิ่ม id="navbar" กลับไปในขั้นที่ 1)
 			const nav = document.getElementById("navbar");
 			const onScrollBlend = () => {
 				if (window.scrollY > 24) nav.classList.add("is-scrolled");

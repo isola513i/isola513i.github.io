@@ -304,13 +304,11 @@ body {
 	border: 1px solid rgba(255, 255, 255, 0.06);
 	border-radius: 16px;
 	overflow: hidden;
-	transition: transform 0.3s ease, box-shadow 0.3s ease; /* แก้ไข: Transition Speed */
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-	/* ▼▼▼ [ปรับปรุง] Card Symmetry (Part 1) ▼▼▼ */
+	/* ▼▼▼ เพิ่ม 3 บรรทัดนี้ (Symmetry Part 1) ▼▼▼ */
 	display: flex;
 	flex-direction: column;
-	height: 100%;
-	/* ▲▲▲ [สิ้นสุด] ▲▲▲ */
 }
 .card:hover {
 	transform: translateY(-4px); /* แก้ไข: ขยับมากขึ้น */
@@ -337,9 +335,9 @@ body {
 	display: flex;
 	gap: 10px;
 	flex-wrap: wrap;
-	/* ▼▼▼ [ปรับปรุง] Card Symmetry (Part 3) ▼▼▼ */
-	margin-top: auto; /* ดันปุ่มลงล่างสุด */
-	/* ▲▲▲ [สิ้นสุด] ▲▲▲ */
+
+	/* ▼▼▼ เพิ่มบรรทัดนี้ (Symmetry Part 3) ▼▼▼ */
+	margin-top: auto; /* ◀◀◀ นี่คือตัวที่ดันปุ่มไปอยู่ล่างสุด */
 }
 .btn {
 	display: inline-block;
@@ -435,7 +433,35 @@ body {
 	}
 }
 
-/* Light theme (เผื่อไว้) */
+/* ใช้ breakpoint ที่ 768px หรือต่ำกว่า */
+@media (max-width: 768px) {
+	/* 1. เปลี่ยน container ของ project ให้เป็น Flexbox */
+	#projects .grid {
+		display: flex; /* เปลี่ยนจาก Grid เป็น Flex */
+		overflow-x: auto; /* ◀ นี่คือพระเอก: ทำให้ scroll แนวนอนได้ */
+
+		/* (Optional) ทำให้การ scroll "snap" เข้าที่ */
+		scroll-snap-type: x mandatory;
+
+		/* (Optional) เพิ่ม padding ด้านล่างเผื่อแถบ scrollbar */
+		padding-bottom: 24px;
+	}
+
+	/* 2. กำหนดขนาดให้ Card แต่ละใบ */
+	#projects .card {
+		/* ยกเลิกการ span 12 (เพราะไม่ใช่ grid แล้ว) */
+		grid-column: unset;
+
+		/* * กำหนดความกว้างการ์ด (เช่น 85% ของจอ)
+		 * เพื่อให้ผู้ใช้ "แอบเห็น" การ์ดใบถัดไปทางขวา 
+		*/
+		flex: 0 0 85%;
+
+		/* (Optional) คู่กับ scroll-snap-type */
+		scroll-snap-align: start;
+	}
+}
+
 @media (prefers-color-scheme: light) {
 	:root {
 		--bg: #f7f8fb;
