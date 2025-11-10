@@ -48,42 +48,57 @@ body {
 	max-width: 1200px;
 	margin-inline: auto;
 
-	/* ▼▼▼ [ปรับปรุง] เพิ่ม Transition สำหรับ Scroll Effect ▼▼▼ */
 	transition: background-color 0.3s ease, border-color 0.3s ease,
 		backdrop-filter 0.3s ease;
 }
 
-/* ▼▼▼ [ปรับปรุง] ย้าย Background, Blur, Border ไปไว้ที่ .is-scrolled ▼▼▼ */
 .nav.is-scrolled {
-	background: rgba(11, 12, 16, 0.75); /* สีพื้นหลังจาก --bg ที่โปร่งแสง */
+	background: rgba(11, 12, 16, 0.75);
 	backdrop-filter: blur(8px) saturate(140%);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
-/* ▲▲▲ [สิ้นสุดการปรับปรุง Navbar] ▲▲▲ */
 
-.brand {
-	display: inline-flex;
-	align-items: center;
-	gap: 10px;
-	text-decoration: none;
-	color: var(--text);
+.nav-toggle {
+	display: none;
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 24px;
+	height: 20px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	padding: 0;
+	z-index: 1001;
 }
-.brand-mark {
-	width: 28px;
-	height: 28px;
-	border-radius: 999px;
-	display: grid;
-	place-items: center;
-	background: #000;
-	color: #fff;
-	font-weight: 800;
-	font-size: 14px;
-	line-height: 1;
+
+.nav-toggle .bar {
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: var(--text);
+	border-radius: 2px;
+	transition: all 0.3s ease;
 }
-.brand-text {
-	font-weight: 700;
-	letter-spacing: 0.2px;
+
+.nav-toggle .bar:nth-child(2) {
+	margin-top: 6px;
+}
+
+.nav-toggle .bar:nth-child(3) {
+	margin-top: 6px;
+}
+
+.nav-toggle.active .bar:nth-child(1) {
+	transform: translateY(9px) rotate(45deg);
+}
+.nav-toggle.active .bar:nth-child(2) {
+	opacity: 0;
+}
+.nav-toggle.active .bar:nth-child(3) {
+	transform: translateY(-9px) rotate(-45deg);
 }
 .nav-links {
 	list-style: none;
@@ -99,7 +114,7 @@ body {
 	font-weight: 700;
 	padding: 10px 12px;
 	border-radius: 12px;
-	transition: background 0.2s ease, transform 0.1s ease; /* แก้ไข: transition speed */
+	transition: background 0.2s ease, transform 0.1s ease;
 }
 .nav-links a:hover {
 	background: rgba(255, 255, 255, 0.08);
@@ -115,6 +130,32 @@ body {
 	background: rgba(255, 255, 255, 0.12);
 }
 
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+	color: var(--text);
+}
+
+.brand-mark {
+	width: 28px;
+	height: 28px;
+	border-radius: 999px;
+	display: grid;
+	place-items: center;
+	background: #000;
+	color: #fff;
+	font-weight: 800;
+	font-size: 14px;
+	line-height: 1;
+}
+
+.brand-text {
+	font-weight: 700;
+	letter-spacing: 0.2px;
+}
+
 .resume-btn {
 	display: inline-flex;
 	align-items: center;
@@ -127,26 +168,17 @@ body {
 	border-radius: 12px;
 	text-decoration: none;
 	font-weight: 700;
-	transition: all 0.3s ease; /* [เพิ่ม] Transition */
+	transition: all 0.3s ease;
 }
+
 .resume-btn:hover {
 	box-shadow: 0 0 0 6px var(--ring);
 }
 
-.nav-toggle {
-	display: none;
-	position: absolute;
-	right: 12px;
-	top: 50%;
-	transform: translateY(-50%);
-	font-size: 22px;
-	background: transparent;
-	border: 0;
-	color: var(--text);
-}
 .hide-desktop {
 	display: none;
 }
+
 :target {
 	scroll-margin-top: 90px;
 }
@@ -173,7 +205,7 @@ body {
 		display: flex;
 	}
 	.nav-toggle {
-		display: inline-block;
+		display: block;
 	}
 	.hide-desktop {
 		display: list-item;
@@ -181,6 +213,19 @@ body {
 	.resume-btn {
 		height: 40px;
 		padding: 0 14px;
+	}
+
+	.hide-mobile {
+		display: none !important;
+	}
+	.nav-links li:nth-child(3) {
+		display: list-item;
+	}
+	.nav-links li:nth-child(4) {
+		display: list-item;
+	}
+	.nav-links li:nth-child(5) {
+		display: list-item;
 	}
 }
 @media (max-width: 600px) {
@@ -241,10 +286,7 @@ body {
 	max-width: 1100px;
 	margin: 0 auto;
 }
-.section.alt {
-	background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02));
-	border-block: 1px solid rgba(255, 255, 255, 0.06);
-}
+
 .section-title {
 	font-size: clamp(24px, 3vw, 36px);
 	margin: 0 0 24px;
@@ -334,32 +376,33 @@ body {
 	justify-content: center; /* [เพิ่ม] จัดกลาง */
 }
 
-/* ▼▼▼ [ปรับปรุง] สไตล์สำหรับ Skill Tags ▼▼▼ */
-.skill-tags li {
-	padding: 6px 12px;
-	border-radius: 999px;
-	font-size: 13px;
-	background: rgba(255, 255, 255, 0.06);
-	border: 1px solid rgba(255, 255, 255, 0.08);
-	color: var(--muted);
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	font-weight: 600;
-	transition: all 0.2s ease; /* [เพิ่ม] Transition */
+/* --- Skill Tags Styles (ปรับปรุง) --- */
+.skill-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem; /* ระยะห่างระหว่าง tags */
+	justify-content: center; /* จัดกลาง */
+	margin-top: 2rem;
 }
-/* [เพิ่ม] Hover Effect */
-.skill-tags li:hover {
-	transform: translateY(-2px);
-	background: rgba(255, 255, 255, 0.1);
-	border-color: rgba(255, 255, 255, 0.15);
+
+.skill-tag {
+	background-color: var(--card-bg);
+	color: var(--accent); /* สีข้อความ */
+	padding: 0.8rem 1.5rem; /* ปรับขนาด padding ให้ใหญ่ขึ้น */
+	border-radius: 50px; /* ทำให้โค้งมน */
+	font-size: 1.1em; /* ปรับขนาด font ให้ใหญ่ขึ้น */
+	font-weight: 500;
+	box-shadow: var(--shadow-sm);
+	transition: transform 0.2s ease, box-shadow 0.2s ease,
+		background-color 0.2s ease;
+	border: 1px solid rgba(255, 255, 255, 0.1); /* เพิ่มขอบ */
 }
-/* [เพิ่ม] สไตล์โลโก้ */
-.skill-tags li img {
-	width: 16px;
-	height: 16px;
+
+.skill-tag:hover {
+	transform: translateY(-3px) scale(1.05); /* เลื่อนขึ้นและขยายเล็กน้อย */
+	box-shadow: var(--shadow-md);
+	background-color: rgba(255, 255, 255, 0.05); /* เปลี่ยนสีพื้นหลังเล็กน้อย */
 }
-/* ▲▲▲ [สิ้นสุด] ▲▲▲ */
 
 .contact-list {
 	list-style: none;
@@ -427,4 +470,90 @@ body {
 	.skill-tags li img {
 		filter: invert(1); /* ทำให้โลโก้ขาวเห็นบนพื้นหลังสว่าง (ต้องเช็คอีกที) */
 	}
+}
+
+.details-list {
+	list-style: disc; /* ใช้ bullet points */
+	padding-left: 20px; /* เพิ่มระยะห่างด้านซ้าย */
+	margin: 10px 0 0;
+	color: var(--muted);
+	font-size: 15px;
+}
+.details-list li {
+	margin-bottom: 8px; /* ระยะห่างระหว่างข้อ */
+}
+
+/* ทำให้ Card Education ใช้ 2 ส่วน และ Experience 1 ส่วน ในจอใหญ่ */
+@media (min-width: 769px) {
+	#experience .grid .card:nth-child(1) {
+		grid-column: span 4; /* Experience */
+	}
+	#experience .grid .card:nth-child(2) {
+		grid-column: span 8; /* Education */
+	}
+	.card-placeholder {
+		display: none !important; /* ซ่อนตัว placeholder ในจอใหญ่ */
+	}
+}
+
+/* ในจอขนาดกลาง ให้ทั้งคู่กว้างเท่ากัน (6) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	#experience .grid .card:nth-child(1),
+	#experience .grid .card:nth-child(2) {
+		grid-column: span 6;
+	}
+}
+
+/* --- Certifications Section Styles --- */
+.certifications-grid {
+	display: grid;
+	grid-template-columns: repeat(
+		auto-fit,
+		minmax(280px, 1fr)
+	); /* ปรับขนาดขั้นต่ำของแต่ละใบ */
+	gap: 2rem;
+	margin-top: 2rem;
+	justify-items: center; /* จัดกลางใน grid */
+}
+
+.certification-item {
+	background-color: var(--card-bg); /* ใช้สีพื้นหลังเดียวกับ card */
+	border-radius: var(--border-radius);
+	padding: 1rem;
+	text-align: center;
+	box-shadow: var(--shadow-sm);
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+	max-width: 400px; /* จำกัดความกว้างสูงสุดของแต่ละใบ */
+	width: 100%;
+}
+
+.certification-item:hover {
+	transform: translateY(-5px); /* เลื่อนขึ้นเล็กน้อยเมื่อ hover */
+	box-shadow: var(--shadow-md);
+}
+
+.certification-item a {
+	text-decoration: none;
+	color: inherit;
+	display: block; /* ทำให้ลิงก์ครอบคลุมทั้ง div */
+}
+
+.certification-item img {
+	max-width: 100%;
+	height: auto;
+	border-radius: var(--border-radius-sm);
+	margin-bottom: 1rem;
+	border: 1px solid rgba(255, 255, 255, 0.1); /* ขอบบางๆ */
+}
+
+.certification-item .certification-title {
+	font-weight: 600;
+	font-size: 1.1em;
+	margin-bottom: 0.5rem;
+	color: var(--text);
+}
+
+.certification-item .certification-date {
+	font-size: 0.9em;
+	color: var(--muted);
 }

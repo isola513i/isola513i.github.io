@@ -11,9 +11,10 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
 			rel="stylesheet"
 		/>
+		<link rel="icon" href="/logo.png" type="image/png" />
 	</head>
 	<body>
-		<nav id="navbar" class="nav">
+		<nav class="nav">
 			<a class="brand" href="#welcome-section" aria-label="Go to Welcome">
 				<span class="brand-mark">N</span>
 				<span class="brand-name">Nattapat</span>
@@ -21,7 +22,9 @@
 
 			<ul class="nav-links" id="nav-links">
 				<li><a href="#about">About Me</a></li>
-				<li><a href="#projects">Project</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#certifications">Certifications</a></li>
 				<li><a href="#skills">Skills</a></li>
 				<li><a href="#contact">Contact Me</a></li>
 				<li class="hide-desktop">
@@ -33,10 +36,15 @@
 						>GitHub</a
 					>
 				</li>
+				<li class="hide-desktop">
+					<a href="/Nattapat-Resume.pdf" target="_blank" rel="noopener">
+						Resume <span aria-hidden="true">↧</span>
+					</a>
+				</li>
 			</ul>
 
 			<a
-				class="resume-btn"
+				class="resume-btn hide-mobile"
 				href="/Nattapat-Resume.pdf"
 				target="_blank"
 				rel="noopener"
@@ -44,14 +52,11 @@
 				Resume <span aria-hidden="true">↧</span>
 			</a>
 
-			<button
-				class="nav-toggle"
-				aria-label="Toggle navigation"
-				aria-expanded="false"
-				aria-controls="nav-links"
-			>
-				☰
-			</button>
+			<div class="nav-toggle" id="nav-toggle">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
 		</nav>
 
 		<header id="welcome-section" class="hero" role="banner">
@@ -67,12 +72,16 @@
 		</header>
 
 		<main>
-			<section id="about" class="section alt">
+			<section id="about" class="section">
 				<h2 class="section-title">About</h2>
 				<p>
-					Third-year IT student @ KMUTT (SIT). Focused on web back-to-front
-					workflows, REST, database design, and product UX. Passionate about
-					learning by building and shipping.
+					Third-year IT student @KMUTT (SIT). Focused on web back-to-front
+					workflows, REST, database design, and product UX. Aspiring and
+					passionate Full-Stack Developer seeking a Developer Internship to
+					apply and strengthen acquired skills in web development. Eager to
+					contribute to innovative projects, gain hands-on experience in
+					cutting-edge technologies, and build robust solutions with a focus on
+					user experience.
 				</p>
 			</section>
 			<section id="projects" class="section">
@@ -107,8 +116,8 @@
 						<div class="card-body">
 							<h3 class="card-title">Meez</h3>
 							<p class="card-text">
-								Mobile-first room booking: calendar UI, availability checks,
-								toasts, soft refresh.
+								Full-stack mobile room booking: calendar UI, availability
+								checks, soft refresh.
 							</p>
 							<div class="card-actions">
 								<a
@@ -117,6 +126,131 @@
 									target="_blank"
 									rel="noopener"
 									>View Repo</a
+								>
+							</div>
+						</div>
+					</article>
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Word Chain Game</h3>
+							<p class="card-text">
+								A word chain game project built with Vue 3 and Tailwind CSS. It
+								focuses on game state management, word validation against a
+								dictionary.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/Jet1a/PROJECT1-SEC-1-GongGangGaiGonk"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://superb-trifle-26255d.netlify.app/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">GongGangGoodFood</h3>
+							<p class="card-text">
+								A Vue.js-based community platform enabling users to share
+								recipes and manage reviews. Implemented full CRUD operations for
+								recipes and user interactions.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/Jet1a/PROJECT2-SEC-1-GongGangGaiGonk"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a class="btn" href="#" target="_blank" rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Tic Tac Toe Game</h3>
+							<p class="card-text">
+								Play Tic Tac Toe against a rule-based AI. Includes player choice
+								(X/O).
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/tic-tac-toe-game"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://isola513i.github.io/tic-tac-toe-game/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Memory Light Game (Simon)</h3>
+							<p class="card-text">
+								Simon game clone with sound, strict mode, and 20-step win
+								condition.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/memory-light-game"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://isola513i.github.io/memory-light-game/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Amazon Clone Web App</h3>
+							<p class="card-text">
+								A practical project in HTML and CSS demonstrating the ability to
+								replicate a complex, real-world website layout (Amazon) with a
+								focus on structural accuracy and styling.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/Clone-Project"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://isola513i.github.io/Clone-Project/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
 								>
 							</div>
 						</div>
@@ -290,101 +424,151 @@
 							</div>
 						</div>
 					</article>
+				</div>
+			</section>
 
-					<article class="card project-tile">
+			<section id="experience" class="section alt">
+				<h2 class="section-title">Experience & Education</h2>
+				<div class="grid">
+					<article class="card">
 						<div class="card-body">
-							<h3 class="card-title">Tic Tac Toe Game</h3>
-							<p class="card-text">
-								FCC Project: Play Tic Tac Toe against a rule-based AI. Includes
-								player choice (X/O).
+							<h3 class="card-title">Work Experience</h3>
+							<p class="card-text" style="font-weight: 700; color: var(--text)">
+								QA Intern
+								<span
+									style="font-weight: 400; color: var(--muted); display: block"
+								>
+									SCB Tech Hub (Mae Manee Team)
+								</span>
+								<span
+									style="
+										font-weight: 400;
+										color: var(--muted);
+										display: block;
+										font-size: 14px;
+										margin-top: 4px;
+									"
+								>
+									Apr 2025 - Sep 2025
+								</span>
 							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/tic-tac-toe-game"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/tic-tac-toe-game/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
-							</div>
+							<ul class="details-list">
+								<li>
+									Tested banking account creation and system validation
+									workflows from a user perspective.
+								</li>
+								<li>
+									Collaborated with developers to ensure feature accuracy and
+									quality of front-end functionalities.
+								</li>
+							</ul>
 						</div>
 					</article>
 
-					<article class="card project-tile">
+					<article class="card">
 						<div class="card-body">
-							<h3 class="card-title">Memory Light Game (Simon)</h3>
-							<p class="card-text">
-								FCC Project: Simon game clone with sound, strict mode, and
-								20-step win condition.
+							<h3 class="card-title">Education</h3>
+							<p class="card-text" style="font-weight: 700; color: var(--text)">
+								Bachelor of Science in Information Technology
+								<span
+									style="font-weight: 400; color: var(--muted); display: block"
+								>
+									King Mongkut's University of Technology Thonburi (KMUTT)
+								</span>
+								<span
+									style="
+										font-weight: 400;
+										color: var(--muted);
+										display: block;
+										font-size: 14px;
+										margin-top: 4px;
+									"
+								>
+									Aug 2023 - Present
+								</span>
 							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/memory-light-game"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/memory-light-game/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
-							</div>
+							<p class="card-text" style="font-weight: 600; margin-top: 16px">
+								Relevant Coursework:
+							</p>
+							<ul class="details-list">
+								<li>
+									Programming Fundamentals, Web & Software Development (Vue.js,
+									Spring Boot), Database Systems & DevOps, Integrated IT Project
+									(Team-based Fullstack Development Project).
+								</li>
+							</ul>
 						</div>
 					</article>
+
+					<div
+						class="card-placeholder"
+						style="grid-column: span 4; display: none"
+					></div>
+				</div>
+			</section>
+
+			<section id="certifications" class="section alt">
+				<h2 class="section-title">Certifications</h2>
+				<div class="grid certifications-grid">
+					<div class="certification-item">
+						<a
+							href="https://www.freecodecamp.org/certification/nattapatz/legacy-front-end"
+							target="_blank"
+							rel="noopener"
+							aria-label="freeCodeCamp Legacy Front End Developer Certification"
+						>
+							<img
+								src="/ffc.png"
+								alt="freeCodeCamp Legacy Front End Developer
+							Certification"
+								loading="lazy"
+							/>
+							<p class="certification-title">
+								freeCodeCamp: Legacy Front End Developer
+							</p>
+							<p class="certification-date">Nov 11, 2025</p>
+						</a>
+					</div>
+					<div class="certification-item">
+						<a
+							href="https://www.garena.in.th/garena-to-coder/certificate"
+							target="_blank"
+							rel="noopener"
+							aria-label="Garena Gamer to Coder: Web Design and Development"
+						>
+							<img
+								src="/garena.png"
+								alt="Garena Gamer to Coder: Web Design and Development"
+								loading="lazy"
+							/>
+							<p class="certification-title">
+								Garena: Web Design and Development
+							</p>
+							<p class="certification-date">Nov 11, 2022</p>
+						</a>
+					</div>
 				</div>
 			</section>
 
 			<!-- ================= SKILLS ================= -->
 			<section id="skills" class="section">
 				<h2 class="section-title">Skills</h2>
-				<ul class="tags skill-tags">
-					<li>
-						<img src="https://cdn.simpleicons.org/vue.js" alt="Vue.js logo" />
-						<span>Vue 3</span>
-					</li>
-					<li>
-						<img
-							src="https://cdn.simpleicons.org/tailwindcss"
-							alt="Tailwind CSS logo"
-						/>
-						<span>TailwindCSS</span>
-					</li>
-					<li>
-						<img
-							src="https://cdn.simpleicons.org/javascript"
-							alt="JavaScript logo"
-						/>
-						<span>JavaScript</span>
-					</li>
-
-					<li>
-						<img
-							src="https://cdn.simpleicons.org/springboot"
-							alt="Spring Boot logo"
-						/>
-						<span>Spring Boot</span>
-					</li>
-					<li>
-						<img src="https://cdn.simpleicons.org/mysql" alt="MySQL logo" />
-						<span>MySQL</span>
-					</li>
-				</ul>
+				<div class="skill-tags">
+					<div class="skill-tag">Vue 3</div>
+					<div class="skill-tag">TailwindCSS</div>
+					<div class="skill-tag">JavaScript</div>
+					<div class="skill-tag">Spring Boot</div>
+					<div class="skill-tag">MySQL</div>
+				</div>
 			</section>
 
 			<section id="contact" class="section">
 				<h2 class="section-title">Contact</h2>
-				<p>Open for internships and collabs. Hit me up:</p>
+				<p>
+					I`m currently looking for new opportunities, my inbox always open.
+					Whether you have a question or just want to say hi, I`ll try my best
+					to get back to you!
+				</p>
 				<ul class="contact-list">
 					<li>
 						<a href="mailto:nattapat.lamn@gmail.com">nattapat.lamn@gmail.com</a>
@@ -412,21 +596,19 @@
 
 		<footer class="footer">
 			<small
-				>© <span id="year"></span> Ice. Built with love and vanilla CSS.</small
+				>© <span id="year"></span> Personal Portfolio by Nattapat Lamnui. All
+				rights reserved.</small
 			>
 		</footer>
 
 		<script>
-			// ===== Mobile nav toggle =====
 			const btn = document.querySelector(".nav-toggle");
 			const links = document.getElementById("nav-links");
 			btn?.addEventListener("click", () => {
-				const expanded = btn.getAttribute("aria-expanded") === "true";
-				btn.setAttribute("aria-expanded", String(!expanded));
+				btn.classList.toggle("active");
 				links.classList.toggle("open");
 			});
 
-			// ===== Active state on click/hash change (fallback) =====
 			const setActiveByHash = () => {
 				document.querySelectorAll('#navbar a[href^="#"]').forEach((a) => {
 					a.removeAttribute("aria-current");
@@ -435,8 +617,6 @@
 				});
 			};
 			window.addEventListener("hashchange", setActiveByHash);
-
-			// ===== Scroll Spy with IntersectionObserver =====
 			const sections = [
 				...document.querySelectorAll("main section, header#welcome-section"),
 			];
@@ -469,15 +649,10 @@
 			);
 
 			sections.forEach((sec) => io.observe(sec));
-
-			// ===== init =====
 			document.getElementById("year").textContent = String(
 				new Date().getFullYear()
 			);
 			window.addEventListener("DOMContentLoaded", setActiveByHash);
-
-			// (โค้ดส่วนนี้อาจไม่มีในไฟล์เดิมของคุณ แต่ผมเห็นใน Log)
-			// (ถ้ามีอยู่แล้วก็ไม่เป็นไรครับ)
 			const nav = document.getElementById("navbar");
 			const onScrollBlend = () => {
 				if (window.scrollY > 24) nav.classList.add("is-scrolled");
