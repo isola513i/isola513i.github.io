@@ -13,15 +13,12 @@
 		/>
 	</head>
 	<body>
-		<!-- ================= NAVBAR ================= -->
 		<nav id="navbar" class="nav">
-			<!-- Left: Brand -->
 			<a class="brand" href="#welcome-section" aria-label="Go to Welcome">
-				<span class="brand-mark">P</span>
-				<span class="brand-text">Personal</span>
+				<span class="brand-mark">N</span>
+				<span class="brand-name">Nattapat</span>
 			</a>
 
-			<!-- Center: Links -->
 			<ul class="nav-links" id="nav-links">
 				<li><a href="#about">About Me</a></li>
 				<li><a href="#projects">Project</a></li>
@@ -38,7 +35,6 @@
 				</li>
 			</ul>
 
-			<!-- Right: Resume button -->
 			<a
 				class="resume-btn"
 				href="/Nattapat-Resume.pdf"
@@ -48,7 +44,6 @@
 				Resume <span aria-hidden="true">↧</span>
 			</a>
 
-			<!-- Mobile toggle -->
 			<button
 				class="nav-toggle"
 				aria-label="Toggle navigation"
@@ -59,7 +54,6 @@
 			</button>
 		</nav>
 
-		<!-- ================= HERO ================= -->
 		<header id="welcome-section" class="hero" role="banner">
 			<div class="hero-inner">
 				<h1>Hi, I’m Ice — Full-Stack Developer</h1>
@@ -72,8 +66,15 @@
 			<div class="bg-shape" aria-hidden="true"></div>
 		</header>
 
-		<!-- ================= MAIN ================= -->
 		<main>
+			<section id="about" class="section alt">
+				<h2 class="section-title">About</h2>
+				<p>
+					Third-year IT student @ KMUTT (SIT). Focused on web back-to-front
+					workflows, REST, database design, and product UX. Passionate about
+					learning by building and shipping.
+				</p>
+			</section>
 			<section id="projects" class="section">
 				<h2 class="section-title">Featured Projects</h2>
 				<div class="grid">
@@ -102,7 +103,6 @@
 							</div>
 						</div>
 					</article>
-
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">Meez</h3>
@@ -121,7 +121,6 @@
 							</div>
 						</div>
 					</article>
-
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">MaeKung Cafe</h3>
@@ -141,7 +140,6 @@
 							</div>
 						</div>
 					</article>
-
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">Random Quote Machine</h3>
@@ -166,7 +164,6 @@
 							</div>
 						</div>
 					</article>
-
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">25 + 5 Clock</h3>
@@ -192,7 +189,6 @@
 							</div>
 						</div>
 					</article>
-
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">JavaScript Calculator</h3>
@@ -218,7 +214,6 @@
 							</div>
 						</div>
 					</article>
-
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">Local Weather App</h3>
@@ -244,12 +239,12 @@
 							</div>
 						</div>
 					</article>
-
 					<article class="card project-tile">
 						<div class="card-body">
 							<h3 class="card-title">Twitch Status Viewer</h3>
 							<p class="card-text">
-								FCC Project: Search Twitch streams or get a random one.
+								FCC Project: Checks if Twitch streamers are online, using FCC's
+								proxy API.
 							</p>
 							<div class="card-actions">
 								<a
@@ -269,27 +264,121 @@
 							</div>
 						</div>
 					</article>
+
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Wikipedia Viewer</h3>
+							<p class="card-text">
+								FCC Project: Search Wikipedia with a click-to-open UI and view
+								random articles.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/wikipedia-viewer"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://isola513i.github.io/wikipedia-viewer/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Tic Tac Toe Game</h3>
+							<p class="card-text">
+								FCC Project: Play Tic Tac Toe against a rule-based AI. Includes
+								player choice (X/O).
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/tic-tac-toe-game"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://isola513i.github.io/tic-tac-toe-game/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">Memory Light Game (Simon)</h3>
+							<p class="card-text">
+								FCC Project: Simon game clone with sound, strict mode, and
+								20-step win condition.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn ghost"
+									href="https://github.com/isola513i/memory-light-game"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a
+									class="btn"
+									href="https://isola513i.github.io/memory-light-game/"
+									target="_blank"
+									rel="noopener"
+									>Live Demo</a
+								>
+							</div>
+						</div>
+					</article>
 				</div>
 			</section>
 
-			<section id="about" class="section alt">
-				<h2 class="section-title">About</h2>
-				<p>
-					Third-year IT student @ KMUTT (SIT). Focused on web back-to-front
-					workflows, REST, database design, and product UX. Passionate about
-					learning by building and shipping.
-				</p>
-			</section>
-
+			<!-- ================= SKILLS ================= -->
 			<section id="skills" class="section">
 				<h2 class="section-title">Skills</h2>
-				<ul class="tags">
-					<li>Vue 3</li>
-					<li>Tailwind</li>
-					<li>TypeScript</li>
-					<li>Spring Boot</li>
-					<li>MySQL</li>
-					<li>JWT</li>
+				<ul class="tags skill-tags">
+					<li>
+						<img src="https://cdn.simpleicons.org/vue.js" alt="Vue.js logo" />
+						<span>Vue 3</span>
+					</li>
+					<li>
+						<img
+							src="https://cdn.simpleicons.org/tailwindcss"
+							alt="Tailwind CSS logo"
+						/>
+						<span>TailwindCSS</span>
+					</li>
+					<li>
+						<img
+							src="https://cdn.simpleicons.org/javascript"
+							alt="JavaScript logo"
+						/>
+						<span>JavaScript</span>
+					</li>
+
+					<li>
+						<img
+							src="https://cdn.simpleicons.org/springboot"
+							alt="Spring Boot logo"
+						/>
+						<span>Spring Boot</span>
+					</li>
+					<li>
+						<img src="https://cdn.simpleicons.org/mysql" alt="MySQL logo" />
+						<span>MySQL</span>
+					</li>
 				</ul>
 			</section>
 
@@ -381,11 +470,14 @@
 
 			sections.forEach((sec) => io.observe(sec));
 
+			// ===== init =====
 			document.getElementById("year").textContent = String(
 				new Date().getFullYear()
 			);
 			window.addEventListener("DOMContentLoaded", setActiveByHash);
 
+			// (โค้ดส่วนนี้อาจไม่มีในไฟล์เดิมของคุณ แต่ผมเห็นใน Log)
+			// (ถ้ามีอยู่แล้วก็ไม่เป็นไรครับ)
 			const nav = document.getElementById("navbar");
 			const onScrollBlend = () => {
 				if (window.scrollY > 24) nav.classList.add("is-scrolled");

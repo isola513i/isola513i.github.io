@@ -40,10 +40,6 @@ body {
 	inset: 0 0 auto 0;
 	height: 72px;
 	z-index: 999;
-	background: color-mix(in oklab, var(--bg) 88%, white 12%);
-	backdrop-filter: blur(8px) saturate(140%);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 	display: grid;
 	grid-template-columns: auto 1fr auto;
 	align-items: center;
@@ -51,7 +47,21 @@ body {
 	padding: 0 20px;
 	max-width: 1200px;
 	margin-inline: auto;
+
+	/* ▼▼▼ [ปรับปรุง] เพิ่ม Transition สำหรับ Scroll Effect ▼▼▼ */
+	transition: background-color 0.3s ease, border-color 0.3s ease,
+		backdrop-filter 0.3s ease;
 }
+
+/* ▼▼▼ [ปรับปรุง] ย้าย Background, Blur, Border ไปไว้ที่ .is-scrolled ▼▼▼ */
+.nav.is-scrolled {
+	background: rgba(11, 12, 16, 0.75); /* สีพื้นหลังจาก --bg ที่โปร่งแสง */
+	backdrop-filter: blur(8px) saturate(140%);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+/* ▲▲▲ [สิ้นสุดการปรับปรุง Navbar] ▲▲▲ */
+
 .brand {
 	display: inline-flex;
 	align-items: center;
@@ -89,7 +99,7 @@ body {
 	font-weight: 700;
 	padding: 10px 12px;
 	border-radius: 12px;
-	transition: background 0.15s ease, transform 0.06s ease;
+	transition: background 0.2s ease, transform 0.1s ease; /* แก้ไข: transition speed */
 }
 .nav-links a:hover {
 	background: rgba(255, 255, 255, 0.08);
@@ -117,6 +127,7 @@ body {
 	border-radius: 12px;
 	text-decoration: none;
 	font-weight: 700;
+	transition: all 0.3s ease; /* [เพิ่ม] Transition */
 }
 .resume-btn:hover {
 	box-shadow: 0 0 0 6px var(--ring);
@@ -136,15 +147,11 @@ body {
 .hide-desktop {
 	display: none;
 }
-
-/* anchor offset กัน nav ทับหัวข้อ */
 :target {
 	scroll-margin-top: 90px;
 }
 
 /* ===== Breakpoints ===== */
-
-/* ≤ 900px: tablet — เมนูลงมาเป็น dropdown, ย่อปุ่ม Resume นิดนึง */
 @media (max-width: 900px) {
 	.nav {
 		grid-template-columns: auto 1fr auto;
@@ -176,8 +183,6 @@ body {
 		padding: 0 14px;
 	}
 }
-
-/* ≤ 600px: mobile — ลด gap/font เมนู, จัด hero ให้พอดี */
 @media (max-width: 600px) {
 	.nav-links a {
 		font-weight: 600;
@@ -257,14 +262,26 @@ body {
 	border: 1px solid rgba(255, 255, 255, 0.06);
 	border-radius: 16px;
 	overflow: hidden;
-	transition: transform 0.18s ease, box-shadow 0.18s ease;
+	transition: transform 0.3s ease, box-shadow 0.3s ease; /* แก้ไข: Transition Speed */
+
+	/* ▼▼▼ [ปรับปรุง] Card Symmetry (Part 1) ▼▼▼ */
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	/* ▲▲▲ [สิ้นสุด] ▲▲▲ */
 }
 .card:hover {
-	transform: translateY(-2px);
+	transform: translateY(-4px); /* แก้ไข: ขยับมากขึ้น */
 	box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
 }
+
 .card-body {
 	padding: 20px;
+	/* ▼▼▼ [ปรับปรุง] Card Symmetry (Part 2) ▼▼▼ */
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1; /* ทำให้ card-body ยืดเต็ม Card */
+	/* ▲▲▲ [สิ้นสุด] ▲▲▲ */
 }
 .card-title {
 	margin: 0 0 8px;
@@ -278,6 +295,9 @@ body {
 	display: flex;
 	gap: 10px;
 	flex-wrap: wrap;
+	/* ▼▼▼ [ปรับปรุง] Card Symmetry (Part 3) ▼▼▼ */
+	margin-top: auto; /* ดันปุ่มลงล่างสุด */
+	/* ▲▲▲ [สิ้นสุด] ▲▲▲ */
 }
 .btn {
 	display: inline-block;
@@ -286,6 +306,7 @@ body {
 	text-decoration: none;
 	color: var(--text);
 	border: 1px solid rgba(255, 255, 255, 0.16);
+	transition: all 0.3s ease; /* [เพิ่ม] Transition */
 }
 .btn:hover {
 	border-color: rgba(255, 255, 255, 0.32);
@@ -305,20 +326,41 @@ body {
 /* Lists / Tags */
 .tags {
 	display: flex;
-	gap: 8px;
+	gap: 10px;
 	flex-wrap: wrap;
 	padding: 0;
 	margin: 14px 0 0;
 	list-style: none;
+	justify-content: center; /* [เพิ่ม] จัดกลาง */
 }
-.tags li {
-	padding: 6px 10px;
+
+/* ▼▼▼ [ปรับปรุง] สไตล์สำหรับ Skill Tags ▼▼▼ */
+.skill-tags li {
+	padding: 6px 12px;
 	border-radius: 999px;
-	font-size: 12px;
+	font-size: 13px;
 	background: rgba(255, 255, 255, 0.06);
 	border: 1px solid rgba(255, 255, 255, 0.08);
 	color: var(--muted);
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	transition: all 0.2s ease; /* [เพิ่ม] Transition */
 }
+/* [เพิ่ม] Hover Effect */
+.skill-tags li:hover {
+	transform: translateY(-2px);
+	background: rgba(255, 255, 255, 0.1);
+	border-color: rgba(255, 255, 255, 0.15);
+}
+/* [เพิ่ม] สไตล์โลโก้ */
+.skill-tags li img {
+	width: 16px;
+	height: 16px;
+}
+/* ▲▲▲ [สิ้นสุด] ▲▲▲ */
+
 .contact-list {
 	list-style: none;
 	padding: 0;
@@ -350,7 +392,7 @@ body {
 	}
 }
 
-/* Light theme */
+/* Light theme (เผื่อไว้) */
 @media (prefers-color-scheme: light) {
 	:root {
 		--bg: #f7f8fb;
@@ -361,30 +403,10 @@ body {
 		--brand-2: #0ea5e9;
 		--ring: rgba(59, 130, 246, 0.35);
 	}
-	.nav {
-		position: fixed;
-		inset: 0 0 auto 0;
-		height: 72px;
-		z-index: 999;
-		background: transparent;
-		backdrop-filter: blur(6px) saturate(120%);
-		border-bottom: 0;
-		box-shadow: none;
-		display: grid;
-		grid-template-columns: auto 1fr auto;
-		align-items: center;
-		gap: 12px;
-		padding: 0 20px;
-		max-width: 1200px;
-		margin-inline: auto;
-	}
-
 	.nav.is-scrolled {
-		background: color-mix(in oklab, var(--bg) 92%, white 8%);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-		box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+		background: rgba(255, 255, 255, 0.85);
+		border-bottom-color: rgba(15, 23, 42, 0.06);
 	}
-
 	body {
 		background: radial-gradient(
 				900px 520px at 70% -10%,
@@ -397,5 +419,12 @@ body {
 				transparent 60%
 			),
 			var(--bg);
+	}
+	.skill-tags li {
+		background: rgba(15, 23, 42, 0.04);
+		border-color: rgba(15, 23, 42, 0.08);
+	}
+	.skill-tags li img {
+		filter: invert(1); /* ทำให้โลโก้ขาวเห็นบนพื้นหลังสว่าง (ต้องเช็คอีกที) */
 	}
 }
