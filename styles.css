@@ -1,0 +1,222 @@
+/* ---------- Base & Theme ---------- */
+/* ---------- Navbar (fixed top) ---------- */
+.nav {
+	position: fixed;
+	inset: 0 0 auto 0;
+	height: 64px;
+	padding: 0 16px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: rgba(11, 12, 16, 0.6);
+	backdrop-filter: saturate(160%) blur(10px);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+	z-index: 999;
+}
+.brand {
+	font-weight: 800;
+	letter-spacing: 0.3px;
+	text-decoration: none;
+	color: var(--text);
+}
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 14px;
+	margin: 0;
+	padding: 0;
+}
+.nav-links a {
+	color: var(--text);
+	text-decoration: none;
+	padding: 10px 12px;
+	border-radius: 10px;
+}
+.nav-links a:hover {
+	background: rgba(255, 255, 255, 0.06);
+}
+.nav-toggle {
+	display: none;
+	font-size: 20px;
+	color: var(--text);
+	background: none;
+	border: 0;
+}
+
+/* ---------- Hero (100vh tall) ---------- */
+.hero {
+	min-height: 100vh; /* FCC requirement: equals viewport height */
+	padding: 96px 20px 32px; /* leave room for fixed navbar */
+	display: grid;
+	place-items: center;
+	position: relative;
+	overflow: hidden;
+}
+.hero-inner {
+	max-width: 980px;
+	text-align: center;
+}
+.hero h1 {
+	font-size: clamp(32px, 5vw, 56px);
+	margin: 0 0 10px;
+	letter-spacing: 0.2px;
+}
+.lead {
+	color: var(--muted);
+	margin: 0 0 24px;
+	font-size: clamp(16px, 2.2vw, 20px);
+}
+
+.bg-shape {
+	position: absolute;
+	inset: -40% -20% auto auto;
+	width: 70vmax;
+	height: 70vmax;
+	background: conic-gradient(
+		from 180deg at 50% 50%,
+		rgba(124, 92, 255, 0.25),
+		rgba(0, 212, 255, 0.25),
+		transparent 60%
+	);
+	filter: blur(60px);
+	pointer-events: none;
+}
+
+/* ---------- Sections ---------- */
+.section {
+	padding: 80px 20px;
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.section.alt {
+	background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.02));
+	border-block: 1px solid rgba(255, 255, 255, 0.06);
+}
+.section-title {
+	font-size: clamp(24px, 3vw, 36px);
+	margin: 0 0 24px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	gap: 16px;
+}
+.card {
+	grid-column: span 12;
+	background: var(--card);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 16px;
+	overflow: hidden;
+}
+.card-body {
+	padding: 20px;
+}
+.card-title {
+	margin: 0 0 8px;
+	font-size: 20px;
+}
+.card-text {
+	color: var(--muted);
+	margin: 0 0 16px;
+}
+.card-actions {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 14px;
+	border-radius: 12px;
+	text-decoration: none;
+	color: var(--text);
+	border: 1px solid rgba(255, 255, 255, 0.16);
+}
+.btn:hover {
+	border-color: rgba(255, 255, 255, 0.32);
+	box-shadow: 0 0 0 6px var(--ring);
+}
+.btn.primary {
+	background: linear-gradient(90deg, var(--brand), var(--brand-2));
+	border: none;
+}
+.btn.ghost {
+	background: transparent;
+}
+
+.tags {
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+	padding: 0;
+	margin: 14px 0 0;
+	list-style: none;
+}
+.tags li {
+	padding: 6px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	background: rgba(255, 255, 255, 0.06);
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	color: var(--muted);
+}
+
+.contact-list {
+	list-style: none;
+	padding: 0;
+	margin: 10px 0 0;
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+}
+.contact-list a {
+	color: var(--text);
+	text-decoration: none;
+	border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
+}
+.contact-list a:hover {
+	border-bottom-style: solid;
+}
+
+.footer {
+	padding: 40px 20px 80px;
+	text-align: center;
+	color: var(--muted);
+}
+
+/* ---------- Responsive (Media Query required by FCC) ---------- */
+@media (max-width: 768px) {
+	.nav-toggle {
+		display: inline-block;
+	}
+	.nav-links {
+		position: absolute;
+		top: 64px;
+		right: 10px;
+		left: 10px;
+		background: rgba(17, 18, 24, 0.96);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 14px;
+		padding: 10px;
+		display: none;
+		flex-direction: column;
+		gap: 6px;
+	}
+	.nav-links.open {
+		display: flex;
+	}
+	.grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (min-width: 769px) {
+	.grid {
+		grid-template-columns: repeat(12, 1fr);
+	}
+	.card {
+		grid-column: span 4;
+	}
+}

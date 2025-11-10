@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Ice — Portfolio</title>
+		<!-- FCC note: external stylesheet link -->
+		<link rel="stylesheet" href="styles.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- Navbar must always be at the top and contain at least one link -->
+		<nav id="navbar" class="nav">
+			<a class="brand" href="#welcome-section" aria-label="Go to Welcome"
+				>Ice.dev</a
+			>
+			<button
+				class="nav-toggle"
+				aria-label="Toggle navigation"
+				aria-expanded="false"
+			>
+				☰
+			</button>
+			<ul class="nav-links">
+				<li><a href="#welcome-section">Home</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<!-- Required external profile link that opens in a new tab -->
+				<li>
+					<a
+						id="profile-link"
+						href="https://github.com/isola513i"
+						target="_blank"
+						rel="noopener"
+						>GitHub</a
+					>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Welcome section: height must equal viewport height, contain an h1 -->
+		<header id="welcome-section" class="hero" role="banner">
+			<div class="hero-inner">
+				<h1>Hi, I’m Ice — Full‑Stack Learner</h1>
+				<p class="lead">
+					Building with <strong>Vue 3</strong>, <strong>Tailwind</strong>,
+					<strong>Spring Boot</strong>, and <strong>MySQL</strong>.
+				</p>
+				<a class="btn primary" href="#projects">See my work</a>
+			</div>
+			<div class="bg-shape" aria-hidden="true"></div>
+		</header>
+		<!-- Projects section: must have id="projects" and at least one .project-tile with a link -->
+		<main>
+			<section id="projects" class="section">
+				<h2 class="section-title">Featured Projects</h2>
+				<div class="grid">
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">ITB‑MShop</h3>
+							<p class="card-text">
+								Full‑stack e‑commerce (Vue3 + Spring Boot + MySQL). Includes JWT
+								auth, brands, sale items, image handling.
+							</p>
+							<div class="card-actions">
+								<a
+									class="btn"
+									href="https://github.com/isola513i/INTEGRATED-PROJECT01"
+									target="_blank"
+									rel="noopener"
+									>View Repo</a
+								>
+								<a class="btn ghost" href="#" aria-disabled="true"
+									>Live Demo (soon)</a
+								>
+							</div>
+						</div>
+					</article>
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">MeetRoom</h3>
+							<p class="card-text">
+								Mobile‑first room booking: calendar UI, availability checks, and
+								toasts for success/failure.
+							</p>
+							<div class="card-actions">
+								<a class="btn" href="#" aria-disabled="true">Repo (private)</a>
+								<a class="btn ghost" href="#" aria-disabled="true"
+									>Case Study</a
+								>
+							</div>
+						</div>
+					</article>
+					<article class="card project-tile">
+						<div class="card-body">
+							<h3 class="card-title">MaeKung Cafe</h3>
+							<p class="card-text">
+								Cafe landing + menu systems, bilingual content, and promo assets
+								(LINE OA, posters).
+							</p>
+							<div class="card-actions">
+								<a class="btn" href="#" aria-disabled="true">Gallery</a>
+								<a class="btn ghost" href="#" aria-disabled="true">Write‑up</a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</section>
+			<section id="about" class="section alt">
+				<h2 class="section-title">About</h2>
+				<p>
+					Third‑year IT student @ KMUTT (SIT). Focused on web back‑to‑front
+					workflows, REST, database design, and product UX. Passionate about
+					learning by building and shipping.
+				</p>
+				<ul class="tags">
+					<li>Vue 3</li>
+					<li>Tailwind</li>
+					<li>TypeScript</li>
+					<li>Spring Boot</li>
+					<li>MySQL</li>
+					<li>JWT</li>
+				</ul>
+			</section>
+			<section id="contact" class="section">
+				<h2 class="section-title">Contact</h2>
+				<p>Open for internships and collabs. Hit me up:</p>
+				<ul class="contact-list">
+					<li><a href="mailto:you@example.com">you@example.com</a></li>
+					<li>
+						<a
+							href="https://github.com/isola513i"
+							target="_blank"
+							rel="noopener"
+							>GitHub</a
+						>
+					</li>
+					<li>
+						<a href="https://www.linkedin.com" target="_blank" rel="noopener"
+							>LinkedIn</a
+						>
+					</li>
+				</ul>
+			</section>
+		</main>
+		<footer class="footer">
+			<small
+				>© <span id="year"></span> Ice. Built with love and vanilla CSS.</small
+			>
+		</footer>
+		<script>
+			// Mobile nav toggle (no external libs)
+			const btn = document.querySelector(".nav-toggle");
+			const links = document.querySelector(".nav-links");
+			btn?.addEventListener("click", () => {
+				const expanded = btn.getAttribute("aria-expanded") === "true";
+				btn.setAttribute("aria-expanded", String(!expanded));
+				links.classList.toggle("open");
+			});
+
+			// Update footer year
+			document.getElementById("year").textContent = String(
+				new Date().getFullYear()
+			);
+		</script>
+		<!-- FCC Test Bundle -->
+		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+	</body>
+</html>
