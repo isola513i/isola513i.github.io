@@ -28,12 +28,15 @@
 			</a>
 
 			<ul class="nav-links" id="nav-links">
-				<li><a href="#about">About Me</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#experience">Experience</a></li>
-				<li><a href="#certifications">Certifications</a></li>
-				<li><a href="#skills">Skills</a></li>
-				<li><a href="#contact">Contact Me</a></li>
+				<li><a href="#about" data-i18n="nav.about">About Me</a></li>
+				<li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+				<li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+				<li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+				<li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+				<li><a href="#contact" data-i18n="nav.contact">Contact Me</a></li>
+				<li class="hide-desktop">
+					<a href="#" id="lang-toggle-mobile" role="button">ภาษาไทย</a>
+				</li>
 				<li class="hide-desktop">
 					<a
 						id="profile-link"
@@ -44,17 +47,22 @@
 					>
 				</li>
 				<li class="hide-desktop">
-					<a href="/Nattapat-Resume.pdf" target="_blank" rel="noopener noreferrer">
+					<a href="/Nattapat-Resume.pdf" target="_blank" rel="noopener noreferrer" data-i18n-html="nav.resume">
 						Resume <span aria-hidden="true">↧</span>
 					</a>
 				</li>
 			</ul>
+
+			<button class="lang-toggle hide-mobile" id="lang-toggle" type="button" aria-label="Switch language">
+				TH
+			</button>
 
 			<a
 				class="resume-btn hide-mobile"
 				href="/Nattapat-Resume.pdf"
 				target="_blank"
 				rel="noopener noreferrer"
+				data-i18n-html="nav.resume"
 			>
 				Resume <span aria-hidden="true">↧</span>
 			</a>
@@ -68,20 +76,20 @@
 
 		<header id="welcome-section" class="hero" role="banner">
 			<div class="hero-inner">
-				<h1>Hi, I'm Ice — Full-Stack Developer</h1>
-				<p class="lead">
+				<h1 data-i18n="hero.title">Hi, I'm Ice — Full-Stack Developer</h1>
+				<p class="lead" data-i18n-html="hero.lead">
 					Building with <strong>Vue 3</strong>, <strong>Tailwind</strong>,
 					<strong>Spring Boot</strong>, and <strong>MySQL</strong>.
 				</p>
-				<a class="btn primary" href="#projects">See my work</a>
+				<a class="btn primary" href="#projects" data-i18n="hero.cta">See my work</a>
 			</div>
 			<div class="bg-shape" aria-hidden="true"></div>
 		</header>
 
 		<main>
 			<section id="about" class="section">
-				<h2 class="section-title">About</h2>
-				<p>
+				<h2 class="section-title" data-i18n="about.title">About</h2>
+				<p data-i18n="about.text">
 					Third-year IT student @KMUTT (SIT). Focused on web back-to-front
 					workflows, REST, database design, and product UX. Aspiring and
 					passionate Full-Stack Developer seeking a Developer Internship to
@@ -92,7 +100,7 @@
 				</p>
 			</section>
 			<section id="projects" class="section">
-				<h2 class="section-title">Featured Projects</h2>
+				<h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
 				<div class="grid">
 					<!-- ===== FEATURED (1-6) ===== -->
 					<article class="card project-tile project-featured">
@@ -107,12 +115,12 @@
 								<span class="card-tag tag-blue">MySQL</span>
 								<span class="card-tag tag-amber">JWT</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.1.desc">
 								Full-stack e-commerce platform serving multiple user roles with 50+ REST API endpoints, JWT authentication, and role-based access control.
 							</p>
 							<div class="card-actions">
-								<a class="btn" href="https://github.com/isola513i/INTEGRATED-PROJECT01" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn ghost" href="https://intproj24.sit.kmutt.ac.th/ssi4/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn" href="https://github.com/isola513i/INTEGRATED-PROJECT01" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn ghost" href="https://intproj24.sit.kmutt.ac.th/ssi4/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -128,12 +136,12 @@
 								<span class="card-tag tag-blue">REST API</span>
 								<span class="card-tag tag-purple">CRUD</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.2.desc">
 								Community recipe platform with full CRUD, server-side pagination, and a review system. Handles recipe management with image uploads and category filtering.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/Jet1a/PROJECT2-SEC-1-GongGangGaiGonk" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://gong-gang-good-food.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/Jet1a/PROJECT2-SEC-1-GongGangGaiGonk" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://gong-gang-good-food.vercel.app/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -149,11 +157,11 @@
 								<span class="card-tag tag-amber">Calendar UI</span>
 								<span class="card-tag tag-blue">Full-Stack</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.3.desc">
 								Mobile-first room booking app with real-time availability conflict checking, interactive calendar UI, and optimistic refresh for a seamless experience.
 							</p>
 							<div class="card-actions">
-								<a class="btn" href="https://github.com/isola513i/Meez-app" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://github.com/isola513i/Meez-app" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
 							</div>
 						</div>
 					</article>
@@ -168,12 +176,12 @@
 								<span class="card-tag tag-green">Vue 3</span>
 								<span class="card-tag tag-cyan">Tailwind CSS</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.4.desc">
 								Interactive word chain game with dictionary-backed validation, complex state management, and turn-based logic using Vue 3 Composition API.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/Jet1a/PROJECT1-SEC-1-GongGangGaiGonk" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://superb-trifle-26255d.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/Jet1a/PROJECT1-SEC-1-GongGangGaiGonk" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://superb-trifle-26255d.netlify.app/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -188,12 +196,12 @@
 								<span class="card-tag tag-amber">JavaScript</span>
 								<span class="card-tag tag-red">AI Logic</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.5.desc">
 								Play Tic Tac Toe against a rule-based AI. Includes player choice (X/O).
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/tic-tac-toe-game" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/tic-tac-toe-game/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/tic-tac-toe-game" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/tic-tac-toe-game/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -208,12 +216,12 @@
 								<span class="card-tag tag-amber">JavaScript</span>
 								<span class="card-tag tag-pink">Audio API</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.6.desc">
 								Simon game clone with sound, strict mode, and 20-step win condition.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/memory-light-game" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/memory-light-game/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/memory-light-game" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/memory-light-game/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -229,11 +237,11 @@
 								<span class="card-tag tag-red">HTML</span>
 								<span class="card-tag tag-blue">CSS</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.7.desc">
 								A practical project in HTML and CSS demonstrating the ability to replicate a complex, real-world website layout (Amazon) with a focus on structural accuracy and styling.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/Clone-Project" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/Clone-Project" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
 							</div>
 						</div>
 					</article>
@@ -248,12 +256,12 @@
 								<span class="card-tag tag-blue">Google Sites</span>
 								<span class="card-tag tag-green">LINE OA</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.8.desc">
 								Cafe landing + menu systems, bilingual content, and promo assets (LINE OA, posters).
 							</p>
 							<div class="card-actions">
-								<a class="btn" href="https://sites.google.com/view/maekungcafe-krabi" target="_blank" rel="noopener noreferrer">Gallery</a>
-								<a class="btn ghost" href="https://maps.app.goo.gl/UGMz93tF7GdszPU3A" target="_blank" rel="noopener noreferrer">Location</a>
+								<a class="btn" href="https://sites.google.com/view/maekungcafe-krabi" target="_blank" rel="noopener noreferrer" data-i18n="btn.gallery">Gallery</a>
+								<a class="btn ghost" href="https://maps.app.goo.gl/UGMz93tF7GdszPU3A" target="_blank" rel="noopener noreferrer" data-i18n="btn.location">Location</a>
 							</div>
 						</div>
 					</article>
@@ -268,12 +276,12 @@
 								<span class="card-tag tag-cyan">React</span>
 								<span class="card-tag tag-blue">API</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.9.desc">
 								FCC Frontend Libraries — React 17. Random quotes + Tweet intent.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/random-quote-machine" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/random-quote-machine/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/random-quote-machine" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/random-quote-machine/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -288,12 +296,12 @@
 								<span class="card-tag tag-cyan">React</span>
 								<span class="card-tag tag-amber">Timer</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.10.desc">
 								FCC Frontend Libraries — React 17. Session/Break timer, sound, reset, test-ready.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/25-5-clock" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/25-5-clock/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/25-5-clock" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/25-5-clock/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -307,12 +315,12 @@
 							<div class="card-tags">
 								<span class="card-tag tag-cyan">React</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.11.desc">
 								FCC Frontend Libraries — React 17. Calculator with decimal & operator precedence.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/javascript-calculator" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/javascript-calculator" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -327,12 +335,12 @@
 								<span class="card-tag tag-amber">JavaScript</span>
 								<span class="card-tag tag-green">Geolocation API</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.12.desc">
 								FCC Project: Shows local weather via Geolocation API. Toggle C°/F°.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/local-weather-app" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/local-weather-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/local-weather-app" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/local-weather-app/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -347,12 +355,12 @@
 								<span class="card-tag tag-amber">JavaScript</span>
 								<span class="card-tag tag-purple">Twitch API</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.13.desc">
 								FCC Project: Checks if Twitch streamers are online, using FCC's proxy API.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/twitch-status-viewer" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/twitch-status-viewer/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/twitch-status-viewer" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/twitch-status-viewer/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
@@ -367,31 +375,31 @@
 								<span class="card-tag tag-amber">JavaScript</span>
 								<span class="card-tag tag-purple">Wikipedia API</span>
 							</div>
-							<p class="card-text">
+							<p class="card-text" data-i18n="project.14.desc">
 								FCC Project: Search Wikipedia with a click-to-open UI and view random articles.
 							</p>
 							<div class="card-actions">
-								<a class="btn ghost" href="https://github.com/isola513i/wikipedia-viewer" target="_blank" rel="noopener noreferrer">View Repo</a>
-								<a class="btn" href="https://isola513i.github.io/wikipedia-viewer/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+								<a class="btn ghost" href="https://github.com/isola513i/wikipedia-viewer" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewRepo">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/wikipedia-viewer/" target="_blank" rel="noopener noreferrer" data-i18n="btn.liveDemo">Live Demo</a>
 							</div>
 						</div>
 					</article>
 				</div>
 				<div class="projects-toggle-wrap">
-					<button class="btn projects-toggle" id="projects-toggle" type="button">
+					<button class="btn projects-toggle" id="projects-toggle" type="button" data-i18n="projects.toggle.show">
 						View all projects
 					</button>
 				</div>
 			</section>
 
 			<section id="experience" class="section alt">
-				<h2 class="section-title">Experience & Education</h2>
+				<h2 class="section-title" data-i18n="exp.title">Experience & Education</h2>
 				<div class="grid">
 					<article class="card">
 						<div class="card-body">
-							<h3 class="card-title">Work Experience</h3>
+							<h3 class="card-title" data-i18n="exp.work.title">Work Experience</h3>
 							<p class="card-text exp-title">
-								QA Intern
+								<span data-i18n="exp.work.role">QA Intern</span>
 								<span class="exp-subtitle">
 									SCB Tech Hub (Mae Manee Team)
 								</span>
@@ -400,11 +408,11 @@
 								</span>
 							</p>
 							<ul class="details-list">
-								<li>
+								<li data-i18n="exp.work.bullet1">
 									Tested banking account creation and system validation
 									workflows from a user perspective.
 								</li>
-								<li>
+								<li data-i18n="exp.work.bullet2">
 									Collaborated with developers to ensure feature accuracy and
 									quality of front-end functionalities.
 								</li>
@@ -414,9 +422,9 @@
 
 					<article class="card">
 						<div class="card-body">
-							<h3 class="card-title">Education</h3>
+							<h3 class="card-title" data-i18n="exp.edu.title">Education</h3>
 							<p class="card-text exp-title">
-								Bachelor of Science in Information Technology
+								<span data-i18n="exp.edu.degree">Bachelor of Science in Information Technology</span>
 								<span class="exp-subtitle">
 									King Mongkut's University of Technology Thonburi (KMUTT)
 								</span>
@@ -424,11 +432,11 @@
 									Aug 2023 - Present
 								</span>
 							</p>
-							<p class="card-text exp-heading">
+							<p class="card-text exp-heading" data-i18n="exp.edu.coursework.label">
 								Relevant Coursework:
 							</p>
 							<ul class="details-list">
-								<li>
+								<li data-i18n="exp.edu.coursework.text">
 									Programming Fundamentals, Web & Software Development (Vue.js,
 									Spring Boot), Database Systems & DevOps, Integrated IT Project
 									(Team-based Fullstack Development Project).
@@ -441,7 +449,7 @@
 			</section>
 
 			<section id="certifications" class="section alt">
-				<h2 class="section-title">Certifications</h2>
+				<h2 class="section-title" data-i18n="cert.title">Certifications</h2>
 				<div class="grid certifications-grid">
 					<div class="certification-item">
 						<a
@@ -485,7 +493,7 @@
 
 			<!-- ================= SKILLS ================= -->
 			<section id="skills" class="section">
-				<h2 class="section-title">Skills</h2>
+				<h2 class="section-title" data-i18n="skills.title">Skills</h2>
 				<div class="skill-tags">
 					<div class="skill-tag">Vue 3</div>
 					<div class="skill-tag">TailwindCSS</div>
@@ -496,10 +504,10 @@
 			</section>
 
 			<section id="contact" class="section">
-				<h2 class="section-title">Contact</h2>
-				<p>
-					I`m currently looking for new opportunities, my inbox always open.
-					Whether you have a question or just want to say hi, I`ll try my best
+				<h2 class="section-title" data-i18n="contact.title">Contact</h2>
+				<p data-i18n="contact.text">
+					I'm currently looking for new opportunities, my inbox always open.
+					Whether you have a question or just want to say hi, I'll try my best
 					to get back to you!
 				</p>
 				<ul class="contact-list">
@@ -528,7 +536,7 @@
 		</main>
 
 		<footer class="footer">
-			<small
+			<small data-i18n-html="footer.text"
 				>© <span id="year"></span> Personal Portfolio by Nattapat Lamnui. All
 				rights reserved.</small
 			>
@@ -587,12 +595,6 @@
 
 			sections.forEach((sec) => io.observe(sec));
 
-			// ===== init =====
-			document.getElementById("year").textContent = String(
-				new Date().getFullYear()
-			);
-			window.addEventListener("DOMContentLoaded", setActiveByHash);
-
 			// ===== Navbar Scroll Effect =====
 			const nav = document.getElementById("navbar");
 			const onScrollBlend = () => {
@@ -608,10 +610,161 @@
 			toggleBtn?.addEventListener('click', () => {
 				projectsSection.classList.toggle('show-all');
 				const expanded = projectsSection.classList.contains('show-all');
-				toggleBtn.textContent = expanded ? 'Show featured only' : 'View all projects';
+				const lang = document.documentElement.lang || 'en';
+				toggleBtn.textContent = translations[lang][expanded ? 'projects.toggle.hide' : 'projects.toggle.show'];
 				const grid = projectsSection.querySelector('.grid');
 				if (grid) grid.scrollLeft = 0;
 			});
+
+			// ===== i18n =====
+			const translations = {
+				en: {
+					'nav.about': 'About Me',
+					'nav.projects': 'Projects',
+					'nav.experience': 'Experience',
+					'nav.certifications': 'Certifications',
+					'nav.skills': 'Skills',
+					'nav.contact': 'Contact Me',
+					'nav.resume': 'Resume <span aria-hidden="true">↧</span>',
+					'hero.title': "Hi, I'm Ice — Full-Stack Developer",
+					'hero.lead': 'Building with <strong>Vue 3</strong>, <strong>Tailwind</strong>, <strong>Spring Boot</strong>, and <strong>MySQL</strong>.',
+					'hero.cta': 'See my work',
+					'about.title': 'About',
+					'about.text': 'Third-year IT student @KMUTT (SIT). Focused on web back-to-front workflows, REST, database design, and product UX. Aspiring and passionate Full-Stack Developer seeking a Developer Internship to apply and strengthen acquired skills in web development. Eager to contribute to innovative projects, gain hands-on experience in cutting-edge technologies, and build robust solutions with a focus on user experience.',
+					'projects.title': 'Featured Projects',
+					'projects.toggle.show': 'View all projects',
+					'projects.toggle.hide': 'Show featured only',
+					'project.1.desc': 'Full-stack e-commerce platform serving multiple user roles with 50+ REST API endpoints, JWT authentication, and role-based access control.',
+					'project.2.desc': 'Community recipe platform with full CRUD, server-side pagination, and a review system. Handles recipe management with image uploads and category filtering.',
+					'project.3.desc': 'Mobile-first room booking app with real-time availability conflict checking, interactive calendar UI, and optimistic refresh for a seamless experience.',
+					'project.4.desc': 'Interactive word chain game with dictionary-backed validation, complex state management, and turn-based logic using Vue 3 Composition API.',
+					'project.5.desc': 'Play Tic Tac Toe against a rule-based AI. Includes player choice (X/O).',
+					'project.6.desc': 'Simon game clone with sound, strict mode, and 20-step win condition.',
+					'project.7.desc': 'A practical project in HTML and CSS demonstrating the ability to replicate a complex, real-world website layout (Amazon) with a focus on structural accuracy and styling.',
+					'project.8.desc': 'Cafe landing + menu systems, bilingual content, and promo assets (LINE OA, posters).',
+					'project.9.desc': 'FCC Frontend Libraries — React 17. Random quotes + Tweet intent.',
+					'project.10.desc': 'FCC Frontend Libraries — React 17. Session/Break timer, sound, reset, test-ready.',
+					'project.11.desc': 'FCC Frontend Libraries — React 17. Calculator with decimal & operator precedence.',
+					'project.12.desc': 'FCC Project: Shows local weather via Geolocation API. Toggle C°/F°.',
+					'project.13.desc': "FCC Project: Checks if Twitch streamers are online, using FCC's proxy API.",
+					'project.14.desc': 'FCC Project: Search Wikipedia with a click-to-open UI and view random articles.',
+					'btn.viewRepo': 'View Repo',
+					'btn.liveDemo': 'Live Demo',
+					'btn.gallery': 'Gallery',
+					'btn.location': 'Location',
+					'exp.title': 'Experience & Education',
+					'exp.work.title': 'Work Experience',
+					'exp.work.role': 'QA Intern',
+					'exp.work.bullet1': 'Tested banking account creation and system validation workflows from a user perspective.',
+					'exp.work.bullet2': 'Collaborated with developers to ensure feature accuracy and quality of front-end functionalities.',
+					'exp.edu.title': 'Education',
+					'exp.edu.degree': 'Bachelor of Science in Information Technology',
+					'exp.edu.coursework.label': 'Relevant Coursework:',
+					'exp.edu.coursework.text': 'Programming Fundamentals, Web & Software Development (Vue.js, Spring Boot), Database Systems & DevOps, Integrated IT Project (Team-based Fullstack Development Project).',
+					'cert.title': 'Certifications',
+					'skills.title': 'Skills',
+					'contact.title': 'Contact',
+					'contact.text': "I'm currently looking for new opportunities, my inbox always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+					'footer.text': '© <span id="year"></span> Personal Portfolio by Nattapat Lamnui. All rights reserved.'
+				},
+				th: {
+					'nav.about': 'เกี่ยวกับ',
+					'nav.projects': 'ผลงาน',
+					'nav.experience': 'ประสบการณ์',
+					'nav.certifications': 'ใบรับรอง',
+					'nav.skills': 'ทักษะ',
+					'nav.contact': 'ติดต่อ',
+					'nav.resume': 'เรซูเม่ <span aria-hidden="true">↧</span>',
+					'hero.title': 'สวัสดี ผมไอซ์ — Full-Stack Developer',
+					'hero.lead': 'พัฒนาด้วย <strong>Vue 3</strong>, <strong>Tailwind</strong>, <strong>Spring Boot</strong> และ <strong>MySQL</strong>',
+					'hero.cta': 'ดูผลงาน',
+					'about.title': 'เกี่ยวกับ',
+					'about.text': 'นักศึกษา IT ชั้นปี 3 @KMUTT (SIT) สนใจงาน Web ตั้งแต่ Front-end ถึง Back-end, REST API, การออกแบบฐานข้อมูล และ UX ผมเป็น Full-Stack Developer ที่มุ่งมั่นและกำลังมองหาตำแหน่ง Developer Intern เพื่อนำทักษะด้านการพัฒนาเว็บมาใช้งานจริง พร้อมเรียนรู้เทคโนโลยีใหม่ๆ และสร้างผลงานที่เน้นประสบการณ์ผู้ใช้',
+					'projects.title': 'ผลงานเด่น',
+					'projects.toggle.show': 'ดูโปรเจคทั้งหมด',
+					'projects.toggle.hide': 'แสดงเฉพาะผลงานเด่น',
+					'project.1.desc': 'แพลตฟอร์ม E-commerce แบบ Full-stack รองรับหลายบทบาทผู้ใช้ พร้อม REST API กว่า 50 endpoint, ระบบยืนยันตัวตน JWT และการควบคุมสิทธิ์ตามบทบาท',
+					'project.2.desc': 'แพลตฟอร์มแบ่งปันสูตรอาหาร มี CRUD เต็มรูปแบบ, การแบ่งหน้าฝั่ง Server และระบบรีวิว รองรับการอัปโหลดรูปภาพและกรองตามหมวดหมู่',
+					'project.3.desc': 'แอปจองห้องแบบ Mobile-first ตรวจสอบเวลาว่างแบบ Real-time, ปฏิทินแบบ Interactive และ Optimistic Refresh เพื่อประสบการณ์ที่ลื่นไหล',
+					'project.4.desc': 'เกมต่อคำศัพท์แบบ Interactive ตรวจสอบคำด้วย Dictionary, จัดการ State ที่ซับซ้อน และระบบผลัดเล่นด้วย Vue 3 Composition API',
+					'project.5.desc': 'เล่น Tic Tac Toe กับ AI แบบ Rule-based เลือกเล่นเป็น X หรือ O ได้',
+					'project.6.desc': 'เกม Simon จำลอง มีเสียง, โหมด Strict และเงื่อนไขชนะ 20 ขั้นตอน',
+					'project.7.desc': 'โปรเจคฝึก HTML และ CSS จำลองหน้าเว็บ Amazon ที่มีความซับซ้อน เน้นความถูกต้องของโครงสร้างและการจัดรูปแบบ',
+					'project.8.desc': 'ระบบเว็บร้านกาแฟ + เมนู, เนื้อหา 2 ภาษา และสื่อโปรโมท (LINE OA, โปสเตอร์)',
+					'project.9.desc': 'FCC Frontend Libraries — React 17 สุ่มคำคมและแชร์ผ่าน Tweet',
+					'project.10.desc': 'FCC Frontend Libraries — React 17 จับเวลา Session/Break, เสียง, รีเซ็ต',
+					'project.11.desc': 'FCC Frontend Libraries — React 17 เครื่องคิดเลขรองรับทศนิยมและลำดับตัวดำเนินการ',
+					'project.12.desc': 'FCC Project: แสดงสภาพอากาศท้องถิ่นผ่าน Geolocation API สลับ C°/F° ได้',
+					'project.13.desc': 'FCC Project: ตรวจสอบสถานะสตรีมเมอร์ Twitch ผ่าน Proxy API ของ FCC',
+					'project.14.desc': 'FCC Project: ค้นหา Wikipedia พร้อม UI คลิกเปิดและดูบทความสุ่ม',
+					'btn.viewRepo': 'ดู Repo',
+					'btn.liveDemo': 'ดูเว็บ',
+					'btn.gallery': 'แกลเลอรี',
+					'btn.location': 'สถานที่',
+					'exp.title': 'ประสบการณ์และการศึกษา',
+					'exp.work.title': 'ประสบการณ์ทำงาน',
+					'exp.work.role': 'QA Intern',
+					'exp.work.bullet1': 'ทดสอบการสร้างบัญชีธนาคารและ Workflow การตรวจสอบระบบจากมุมมองผู้ใช้',
+					'exp.work.bullet2': 'ทำงานร่วมกับนักพัฒนาเพื่อให้ฟีเจอร์ถูกต้องและมีคุณภาพในส่วน Front-end',
+					'exp.edu.title': 'การศึกษา',
+					'exp.edu.degree': 'วิทยาศาสตรบัณฑิต สาขาเทคโนโลยีสารสนเทศ',
+					'exp.edu.coursework.label': 'วิชาที่เกี่ยวข้อง:',
+					'exp.edu.coursework.text': 'พื้นฐานการเขียนโปรแกรม, การพัฒนาเว็บและซอฟต์แวร์ (Vue.js, Spring Boot), ระบบฐานข้อมูลและ DevOps, โปรเจค IT แบบบูรณาการ (พัฒนา Fullstack เป็นทีม)',
+					'cert.title': 'ใบรับรอง',
+					'skills.title': 'ทักษะ',
+					'contact.title': 'ติดต่อ',
+					'contact.text': 'ผมกำลังมองหาโอกาสใหม่ๆ กล่องข้อความเปิดรับเสมอ ไม่ว่าจะมีคำถามหรือแค่อยากทักทาย ผมยินดีตอบกลับครับ!',
+					'footer.text': '© <span id="year"></span> พอร์ตโฟลิโอโดย ณัฐภัทร ลำนุ่ย สงวนลิขสิทธิ์'
+				}
+			};
+
+			function applyLang(lang) {
+				document.documentElement.lang = lang;
+				localStorage.setItem('lang', lang);
+
+				// text-only elements
+				document.querySelectorAll('[data-i18n]').forEach(el => {
+					const key = el.getAttribute('data-i18n');
+					if (translations[lang][key]) el.textContent = translations[lang][key];
+				});
+
+				// HTML elements
+				document.querySelectorAll('[data-i18n-html]').forEach(el => {
+					const key = el.getAttribute('data-i18n-html');
+					if (translations[lang][key]) el.innerHTML = translations[lang][key];
+				});
+
+				// re-populate year after footer innerHTML replacement
+				const yearEl = document.getElementById('year');
+				if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+				// update toggle buttons
+				const desktopToggle = document.getElementById('lang-toggle');
+				const mobileToggle = document.getElementById('lang-toggle-mobile');
+				if (desktopToggle) desktopToggle.textContent = lang === 'en' ? 'TH' : 'EN';
+				if (mobileToggle) mobileToggle.textContent = lang === 'en' ? 'ภาษาไทย' : 'English';
+
+				// update projects toggle (dynamic text)
+				if (toggleBtn) {
+					const expanded = projectsSection.classList.contains('show-all');
+					toggleBtn.textContent = translations[lang][expanded ? 'projects.toggle.hide' : 'projects.toggle.show'];
+				}
+			}
+
+			// init
+			const savedLang = localStorage.getItem('lang') || 'en';
+			applyLang(savedLang);
+
+			// listeners
+			document.getElementById('lang-toggle')?.addEventListener('click', () => {
+				applyLang(document.documentElement.lang === 'en' ? 'th' : 'en');
+			});
+			document.getElementById('lang-toggle-mobile')?.addEventListener('click', (e) => {
+				e.preventDefault();
+				applyLang(document.documentElement.lang === 'en' ? 'th' : 'en');
+			});
+
+			window.addEventListener("DOMContentLoaded", setActiveByHash);
 		</script>
 	</body>
 </html>
