@@ -3,7 +3,13 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;">
+		<meta name="description" content="Nattapat (Ice) - Full-Stack Developer Portfolio. Vue 3, Spring Boot, MySQL.">
+		<meta property="og:title" content="Nattapat - Full-Stack Developer">
+		<meta property="og:description" content="Portfolio of Nattapat (Ice) - Full-Stack Developer, IT Student at KMUTT">
+		<meta property="og:image" content="https://isola513i.github.io/logo.png">
+		<meta property="og:url" content="https://isola513i.github.io">
+		<meta property="og:type" content="website">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com;">
 		<title>Nattapat - Portfolio</title>
 		<link rel="stylesheet" href="styles.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,12 +39,12 @@
 						id="profile-link"
 						href="https://github.com/isola513i"
 						target="_blank"
-						rel="noopener"
+						rel="noopener noreferrer"
 						>GitHub</a
 					>
 				</li>
 				<li class="hide-desktop">
-					<a href="/Nattapat-Resume.pdf" target="_blank" rel="noopener">
+					<a href="/Nattapat-Resume.pdf" target="_blank" rel="noopener noreferrer">
 						Resume <span aria-hidden="true">↧</span>
 					</a>
 				</li>
@@ -48,7 +54,7 @@
 				class="resume-btn hide-mobile"
 				href="/Nattapat-Resume.pdf"
 				target="_blank"
-				rel="noopener"
+				rel="noopener noreferrer"
 			>
 				Resume <span aria-hidden="true">↧</span>
 			</a>
@@ -62,7 +68,7 @@
 
 		<header id="welcome-section" class="hero" role="banner">
 			<div class="hero-inner">
-				<h1>Hi, I’m Ice — Full-Stack Developer</h1>
+				<h1>Hi, I'm Ice — Full-Stack Developer</h1>
 				<p class="lead">
 					Building with <strong>Vue 3</strong>, <strong>Tailwind</strong>,
 					<strong>Spring Boot</strong>, and <strong>MySQL</strong>.
@@ -88,336 +94,293 @@
 			<section id="projects" class="section">
 				<h2 class="section-title">Featured Projects</h2>
 				<div class="grid">
-					<article class="card project-tile">
+					<!-- ===== FEATURED (1-6) ===== -->
+					<article class="card project-tile project-featured">
+						<div class="card-img">
+							<img src="/previews/itb-mshop.png" alt="ITB-MShop preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
 						<div class="card-body">
 							<h3 class="card-title">ITB-MShop</h3>
-							<p class="card-text">
-								Full-stack e-commerce (Vue3 + Spring Boot + MySQL). Includes JWT
-								auth, brands, sale items, image handling.
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn"
-									href="https://github.com/isola513i/INTEGRATED-PROJECT01"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn ghost"
-									href="https://intproj24.sit.kmutt.ac.th/ssi4/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
+							<div class="card-tags">
+								<span class="card-tag tag-green">Vue 3</span>
+								<span class="card-tag tag-green">Spring Boot</span>
+								<span class="card-tag tag-blue">MySQL</span>
+								<span class="card-tag tag-amber">JWT</span>
 							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">Meez</h3>
 							<p class="card-text">
-								Full-stack mobile room booking: calendar UI, availability
-								checks, soft refresh.
+								Full-stack e-commerce platform serving multiple user roles with 50+ REST API endpoints, JWT authentication, and role-based access control.
 							</p>
 							<div class="card-actions">
-								<a
-									class="btn"
-									href="https://github.com/isola513i/Meez-app"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">Word Chain Game</h3>
-							<p class="card-text">
-								A word chain game project built with Vue 3 and Tailwind CSS. It
-								focuses on game state management, word validation against a
-								dictionary.
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/Jet1a/PROJECT1-SEC-1-GongGangGaiGonk"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://superb-trifle-26255d.netlify.app/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
-							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">GongGangGoodFood</h3>
-							<p class="card-text">
-								A Vue.js-based community platform enabling users to share
-								recipes and manage reviews. Implemented full CRUD operations for
-								recipes and user interactions.
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/Jet1a/PROJECT2-SEC-1-GongGangGaiGonk"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a class="btn" href="#" target="_blank" rel="noopener"
-									>Live Demo</a
-								>
-							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">Tic Tac Toe Game</h3>
-							<p class="card-text">
-								Play Tic Tac Toe against a rule-based AI. Includes player choice
-								(X/O).
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/tic-tac-toe-game"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/tic-tac-toe-game/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
+								<a class="btn" href="https://github.com/isola513i/INTEGRATED-PROJECT01" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn ghost" href="https://intproj24.sit.kmutt.ac.th/ssi4/" target="_blank" rel="noopener noreferrer">Live Demo</a>
 							</div>
 						</div>
 					</article>
 
-					<article class="card project-tile">
+					<article class="card project-tile project-featured">
+						<div class="card-img">
+							<img src="/previews/gong-gang-good-food.png" alt="GongGangGoodFood preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">GongGangGoodFood</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-green">Vue.js</span>
+								<span class="card-tag tag-blue">REST API</span>
+								<span class="card-tag tag-purple">CRUD</span>
+							</div>
+							<p class="card-text">
+								Community recipe platform with full CRUD, server-side pagination, and a review system. Handles recipe management with image uploads and category filtering.
+							</p>
+							<div class="card-actions">
+								<a class="btn ghost" href="https://github.com/Jet1a/PROJECT2-SEC-1-GongGangGaiGonk" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://gong-gang-good-food.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile project-featured">
+						<div class="card-img">
+							<img src="/previews/meez.png" alt="Meez preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Meez</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-pink">Mobile</span>
+								<span class="card-tag tag-amber">Calendar UI</span>
+								<span class="card-tag tag-blue">Full-Stack</span>
+							</div>
+							<p class="card-text">
+								Mobile-first room booking app with real-time availability conflict checking, interactive calendar UI, and optimistic refresh for a seamless experience.
+							</p>
+							<div class="card-actions">
+								<a class="btn" href="https://github.com/isola513i/Meez-app" target="_blank" rel="noopener noreferrer">View Repo</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile project-featured">
+						<div class="card-img">
+							<img src="/previews/word-chain-game.png" alt="Word Chain Game preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Word Chain Game</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-green">Vue 3</span>
+								<span class="card-tag tag-cyan">Tailwind CSS</span>
+							</div>
+							<p class="card-text">
+								Interactive word chain game with dictionary-backed validation, complex state management, and turn-based logic using Vue 3 Composition API.
+							</p>
+							<div class="card-actions">
+								<a class="btn ghost" href="https://github.com/Jet1a/PROJECT1-SEC-1-GongGangGaiGonk" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://superb-trifle-26255d.netlify.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile project-featured">
+						<div class="card-img">
+							<img src="/previews/tic-tac-toe.png" alt="Tic Tac Toe preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Tic Tac Toe Game</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-amber">JavaScript</span>
+								<span class="card-tag tag-red">AI Logic</span>
+							</div>
+							<p class="card-text">
+								Play Tic Tac Toe against a rule-based AI. Includes player choice (X/O).
+							</p>
+							<div class="card-actions">
+								<a class="btn ghost" href="https://github.com/isola513i/tic-tac-toe-game" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/tic-tac-toe-game/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile project-featured">
+						<div class="card-img">
+							<img src="/previews/memory-light-game.png" alt="Memory Light Game preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
 						<div class="card-body">
 							<h3 class="card-title">Memory Light Game (Simon)</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-amber">JavaScript</span>
+								<span class="card-tag tag-pink">Audio API</span>
+							</div>
 							<p class="card-text">
-								Simon game clone with sound, strict mode, and 20-step win
-								condition.
+								Simon game clone with sound, strict mode, and 20-step win condition.
 							</p>
 							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/memory-light-game"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/memory-light-game/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
+								<a class="btn ghost" href="https://github.com/isola513i/memory-light-game" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/memory-light-game/" target="_blank" rel="noopener noreferrer">Live Demo</a>
 							</div>
 						</div>
 					</article>
-					<article class="card project-tile">
+
+					<!-- ===== EXTRA (7-14) ===== -->
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/amazon-clone.png" alt="Amazon Clone preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
 						<div class="card-body">
 							<h3 class="card-title">Amazon Clone Web App</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-red">HTML</span>
+								<span class="card-tag tag-blue">CSS</span>
+							</div>
 							<p class="card-text">
-								A practical project in HTML and CSS demonstrating the ability to
-								replicate a complex, real-world website layout (Amazon) with a
-								focus on structural accuracy and styling.
+								A practical project in HTML and CSS demonstrating the ability to replicate a complex, real-world website layout (Amazon) with a focus on structural accuracy and styling.
 							</p>
 							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/Clone-Project"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
+								<a class="btn ghost" href="https://github.com/isola513i/Clone-Project" target="_blank" rel="noopener noreferrer">View Repo</a>
 							</div>
 						</div>
 					</article>
-					<article class="card project-tile">
+
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/maekung-cafe.png" alt="MaeKung Cafe preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
 						<div class="card-body">
 							<h3 class="card-title">MaeKung Cafe</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-blue">Google Sites</span>
+								<span class="card-tag tag-green">LINE OA</span>
+							</div>
 							<p class="card-text">
-								Cafe landing + menu systems, bilingual content, and promo assets
-								(LINE OA, posters).
+								Cafe landing + menu systems, bilingual content, and promo assets (LINE OA, posters).
 							</p>
 							<div class="card-actions">
-								<a class="btn" href="#" aria-disabled="true">Gallery</a>
-								<a
-									class="btn ghost"
-									href="#"
-									target="_blank"
-									rel="noopener"
-									>Location</a
-								>
+								<a class="btn" href="https://sites.google.com/view/maekungcafe-krabi" target="_blank" rel="noopener noreferrer">Gallery</a>
+								<a class="btn ghost" href="https://maps.app.goo.gl/UGMz93tF7GdszPU3A" target="_blank" rel="noopener noreferrer">Location</a>
 							</div>
 						</div>
 					</article>
-					<article class="card project-tile">
+
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/random-quote-machine.png" alt="Random Quote Machine preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
 						<div class="card-body">
 							<h3 class="card-title">Random Quote Machine</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-cyan">React</span>
+								<span class="card-tag tag-blue">API</span>
+							</div>
 							<p class="card-text">
 								FCC Frontend Libraries — React 17. Random quotes + Tweet intent.
 							</p>
 							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/random-quote-machine"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/random-quote-machine/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
-							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">25 + 5 Clock</h3>
-							<p class="card-text">
-								FCC Frontend Libraries — React 17. Session/Break timer, sound,
-								reset, test-ready.
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/25-5-clock"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/25-5-clock/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
-							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">JavaScript Calculator</h3>
-							<p class="card-text">
-								FCC Frontend Libraries — React 17. Calculator with decimal &
-								operator precedence.
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/javascript-calculator"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/javascript-calculator/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
-							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">Local Weather App</h3>
-							<p class="card-text">
-								FCC Project: Shows local weather via Geolocation API. Toggle
-								C°/F°.
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/local-weather-app"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/local-weather-app/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
-							</div>
-						</div>
-					</article>
-					<article class="card project-tile">
-						<div class="card-body">
-							<h3 class="card-title">Twitch Status Viewer</h3>
-							<p class="card-text">
-								FCC Project: Checks if Twitch streamers are online, using FCC's
-								proxy API.
-							</p>
-							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/twitch-status-viewer"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/twitch-status-viewer/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
+								<a class="btn ghost" href="https://github.com/isola513i/random-quote-machine" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/random-quote-machine/" target="_blank" rel="noopener noreferrer">Live Demo</a>
 							</div>
 						</div>
 					</article>
 
-					<article class="card project-tile">
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/25-5-clock.png" alt="25 + 5 Clock preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
 						<div class="card-body">
-							<h3 class="card-title">Wikipedia Viewer</h3>
+							<h3 class="card-title">25 + 5 Clock</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-cyan">React</span>
+								<span class="card-tag tag-amber">Timer</span>
+							</div>
 							<p class="card-text">
-								FCC Project: Search Wikipedia with a click-to-open UI and view
-								random articles.
+								FCC Frontend Libraries — React 17. Session/Break timer, sound, reset, test-ready.
 							</p>
 							<div class="card-actions">
-								<a
-									class="btn ghost"
-									href="https://github.com/isola513i/wikipedia-viewer"
-									target="_blank"
-									rel="noopener"
-									>View Repo</a
-								>
-								<a
-									class="btn"
-									href="https://isola513i.github.io/wikipedia-viewer/"
-									target="_blank"
-									rel="noopener"
-									>Live Demo</a
-								>
+								<a class="btn ghost" href="https://github.com/isola513i/25-5-clock" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/25-5-clock/" target="_blank" rel="noopener noreferrer">Live Demo</a>
 							</div>
 						</div>
 					</article>
+
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/javascript-calculator.png" alt="JavaScript Calculator preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">JavaScript Calculator</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-cyan">React</span>
+							</div>
+							<p class="card-text">
+								FCC Frontend Libraries — React 17. Calculator with decimal & operator precedence.
+							</p>
+							<div class="card-actions">
+								<a class="btn ghost" href="https://github.com/isola513i/javascript-calculator" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/javascript-calculator/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/local-weather-app.png" alt="Local Weather App preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Local Weather App</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-amber">JavaScript</span>
+								<span class="card-tag tag-green">Geolocation API</span>
+							</div>
+							<p class="card-text">
+								FCC Project: Shows local weather via Geolocation API. Toggle C°/F°.
+							</p>
+							<div class="card-actions">
+								<a class="btn ghost" href="https://github.com/isola513i/local-weather-app" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/local-weather-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/twitch-status-viewer.png" alt="Twitch Status Viewer preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Twitch Status Viewer</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-amber">JavaScript</span>
+								<span class="card-tag tag-purple">Twitch API</span>
+							</div>
+							<p class="card-text">
+								FCC Project: Checks if Twitch streamers are online, using FCC's proxy API.
+							</p>
+							<div class="card-actions">
+								<a class="btn ghost" href="https://github.com/isola513i/twitch-status-viewer" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/twitch-status-viewer/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+							</div>
+						</div>
+					</article>
+
+					<article class="card project-tile project-extra">
+						<div class="card-img">
+							<img src="/previews/wikipedia-viewer.png" alt="Wikipedia Viewer preview" loading="lazy" onerror="this.hidden=true" />
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Wikipedia Viewer</h3>
+							<div class="card-tags">
+								<span class="card-tag tag-amber">JavaScript</span>
+								<span class="card-tag tag-purple">Wikipedia API</span>
+							</div>
+							<p class="card-text">
+								FCC Project: Search Wikipedia with a click-to-open UI and view random articles.
+							</p>
+							<div class="card-actions">
+								<a class="btn ghost" href="https://github.com/isola513i/wikipedia-viewer" target="_blank" rel="noopener noreferrer">View Repo</a>
+								<a class="btn" href="https://isola513i.github.io/wikipedia-viewer/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+							</div>
+						</div>
+					</article>
+				</div>
+				<div class="projects-toggle-wrap">
+					<button class="btn projects-toggle" id="projects-toggle" type="button">
+						View all projects
+					</button>
 				</div>
 			</section>
 
@@ -427,22 +390,12 @@
 					<article class="card">
 						<div class="card-body">
 							<h3 class="card-title">Work Experience</h3>
-							<p class="card-text" style="font-weight: 700; color: var(--text)">
+							<p class="card-text exp-title">
 								QA Intern
-								<span
-									style="font-weight: 400; color: var(--muted); display: block"
-								>
+								<span class="exp-subtitle">
 									SCB Tech Hub (Mae Manee Team)
 								</span>
-								<span
-									style="
-										font-weight: 400;
-										color: var(--muted);
-										display: block;
-										font-size: 14px;
-										margin-top: 4px;
-									"
-								>
+								<span class="exp-detail">
 									Apr 2025 - Sep 2025
 								</span>
 							</p>
@@ -462,26 +415,16 @@
 					<article class="card">
 						<div class="card-body">
 							<h3 class="card-title">Education</h3>
-							<p class="card-text" style="font-weight: 700; color: var(--text)">
+							<p class="card-text exp-title">
 								Bachelor of Science in Information Technology
-								<span
-									style="font-weight: 400; color: var(--muted); display: block"
-								>
+								<span class="exp-subtitle">
 									King Mongkut's University of Technology Thonburi (KMUTT)
 								</span>
-								<span
-									style="
-										font-weight: 400;
-										color: var(--muted);
-										display: block;
-										font-size: 14px;
-										margin-top: 4px;
-									"
-								>
+								<span class="exp-detail">
 									Aug 2023 - Present
 								</span>
 							</p>
-							<p class="card-text" style="font-weight: 600; margin-top: 16px">
+							<p class="card-text exp-heading">
 								Relevant Coursework:
 							</p>
 							<ul class="details-list">
@@ -494,10 +437,6 @@
 						</div>
 					</article>
 
-					<div
-						class="card-placeholder"
-						style="grid-column: span 4; display: none"
-					></div>
 				</div>
 			</section>
 
@@ -508,7 +447,7 @@
 						<a
 							href="https://www.freecodecamp.org/certification/nattapatz/legacy-front-end"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
 							aria-label="freeCodeCamp Legacy Front End Developer Certification"
 						>
 							<img
@@ -527,7 +466,7 @@
 						<a
 							href="https://www.garena.in.th/garena-to-coder/certificate"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
 							aria-label="Garena Gamer to Coder: Web Design and Development"
 						>
 							<img
@@ -572,7 +511,7 @@
 							id="profile-link"
 							href="https://github.com/isola513i"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
 							>GitHub</a
 						>
 					</li>
@@ -580,7 +519,7 @@
 						<a
 							href="https://www.linkedin.com/in/nattapat-lamn04/"
 							target="_blank"
-							rel="noopener"
+							rel="noopener noreferrer"
 							>LinkedIn</a
 						>
 					</li>
@@ -596,18 +535,15 @@
 		</footer>
 
 		<script>
-			// ===== Mobile nav toggle (โค้ดใหม่ที่แก้ไขแล้ว) =====
+			// ===== Mobile nav toggle =====
 			const btn = document.querySelector(".nav-toggle");
 			const links = document.getElementById("nav-links");
 			btn?.addEventListener("click", () => {
-				// เพิ่ม/ลบ class 'active' เพื่อสร้าง animation 'X'
 				btn.classList.toggle("active");
-
-				// เพิ่ม/ลบ class 'open' เพื่อแสดง/ซ่อนเมนู
 				links.classList.toggle("open");
 			});
 
-			// ===== Active state on click/hash change (โค้ดเดิม) =====
+			// ===== Active state on click/hash change =====
 			const setActiveByHash = () => {
 				document.querySelectorAll('#navbar a[href^="#"]').forEach((a) => {
 					a.removeAttribute("aria-current");
@@ -617,7 +553,7 @@
 			};
 			window.addEventListener("hashchange", setActiveByHash);
 
-			// ===== Scroll Spy with IntersectionObserver (โค้ดเดิม) =====
+			// ===== Scroll Spy with IntersectionObserver =====
 			const sections = [
 				...document.querySelectorAll("main section, header#welcome-section"),
 			];
@@ -651,14 +587,13 @@
 
 			sections.forEach((sec) => io.observe(sec));
 
-			// ===== init (โค้ดเดิม) =====
+			// ===== init =====
 			document.getElementById("year").textContent = String(
 				new Date().getFullYear()
 			);
 			window.addEventListener("DOMContentLoaded", setActiveByHash);
 
-			// ===== Navbar Scroll Effect (โค้ดเดิม) =====
-			// (ตอนนี้จะทำงานได้เพราะเราเพิ่ม id="navbar" กลับไปในขั้นที่ 1)
+			// ===== Navbar Scroll Effect =====
 			const nav = document.getElementById("navbar");
 			const onScrollBlend = () => {
 				if (window.scrollY > 24) nav.classList.add("is-scrolled");
@@ -666,6 +601,17 @@
 			};
 			window.addEventListener("scroll", onScrollBlend);
 			window.addEventListener("DOMContentLoaded", onScrollBlend);
+
+			// ===== Projects Toggle =====
+			const projectsSection = document.getElementById('projects');
+			const toggleBtn = document.getElementById('projects-toggle');
+			toggleBtn?.addEventListener('click', () => {
+				projectsSection.classList.toggle('show-all');
+				const expanded = projectsSection.classList.contains('show-all');
+				toggleBtn.textContent = expanded ? 'Show featured only' : 'View all projects';
+				const grid = projectsSection.querySelector('.grid');
+				if (grid) grid.scrollLeft = 0;
+			});
 		</script>
 	</body>
 </html>

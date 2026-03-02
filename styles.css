@@ -2,11 +2,17 @@
 :root {
 	--bg: #0b0c10;
 	--card: #111218;
+	--card-bg: #111218;
 	--muted: #b3b7c0;
 	--text: #e8ecf1;
 	--brand: #7c5cff;
 	--brand-2: #00d4ff;
+	--accent: #7c5cff;
 	--ring: rgba(124, 92, 255, 0.45);
+	--shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+	--shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
+	--border-radius: 16px;
+	--border-radius-sm: 8px;
 }
 
 * {
@@ -149,11 +155,6 @@ body {
 	font-weight: 800;
 	font-size: 14px;
 	line-height: 1;
-}
-
-.brand-text {
-	font-weight: 700;
-	letter-spacing: 0.2px;
 }
 
 .resume-btn {
@@ -363,15 +364,103 @@ body {
 	min-height: 40px;
 }
 
-/* Lists / Tags */
-.tags {
+/* --- Card Image --- */
+.card-img {
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	background: rgba(255, 255, 255, 0.04);
+	flex-shrink: 0;
+}
+.card-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	transition: transform 0.3s ease;
+}
+.card:hover .card-img img {
+	transform: scale(1.03);
+}
+
+/* --- Card Tags --- */
+.card-tags {
 	display: flex;
-	gap: 10px;
 	flex-wrap: wrap;
-	padding: 0;
-	margin: 14px 0 0;
-	list-style: none;
-	justify-content: center; /* [เพิ่ม] จัดกลาง */
+	gap: 6px;
+	margin-bottom: 12px;
+}
+.card-tag {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: 50px;
+	font-size: 0.75em;
+	font-weight: 500;
+	white-space: nowrap;
+	background: rgba(124, 92, 255, 0.1);
+	color: #a78bfa;
+	border: 1px solid rgba(124, 92, 255, 0.2);
+}
+.card-tag.tag-green {
+	background: rgba(16, 185, 129, 0.1);
+	color: #34d399;
+	border-color: rgba(16, 185, 129, 0.25);
+}
+.card-tag.tag-blue {
+	background: rgba(59, 130, 246, 0.1);
+	color: #60a5fa;
+	border-color: rgba(59, 130, 246, 0.25);
+}
+.card-tag.tag-cyan {
+	background: rgba(6, 182, 212, 0.1);
+	color: #22d3ee;
+	border-color: rgba(6, 182, 212, 0.25);
+}
+.card-tag.tag-amber {
+	background: rgba(245, 158, 11, 0.1);
+	color: #fbbf24;
+	border-color: rgba(245, 158, 11, 0.25);
+}
+.card-tag.tag-pink {
+	background: rgba(236, 72, 153, 0.1);
+	color: #f472b6;
+	border-color: rgba(236, 72, 153, 0.25);
+}
+.card-tag.tag-red {
+	background: rgba(239, 68, 68, 0.1);
+	color: #f87171;
+	border-color: rgba(239, 68, 68, 0.25);
+}
+.card-tag.tag-purple {
+	background: rgba(124, 92, 255, 0.1);
+	color: #a78bfa;
+	border-color: rgba(124, 92, 255, 0.2);
+}
+
+/* --- Projects Toggle --- */
+.project-extra {
+	display: none;
+}
+#projects.show-all .project-extra {
+	display: flex;
+}
+.projects-toggle-wrap {
+	text-align: center;
+	margin-top: 24px;
+}
+.projects-toggle {
+	cursor: pointer;
+	font-size: 15px;
+	font-weight: 600;
+	background: transparent;
+	color: var(--accent);
+	border: 1px solid var(--accent);
+	padding: 12px 24px;
+	border-radius: 12px;
+	transition: all 0.3s ease;
+}
+.projects-toggle:hover {
+	background: rgba(124, 92, 255, 0.1);
+	box-shadow: 0 0 0 4px var(--ring);
 }
 
 /* --- Skill Tags Styles (ปรับปรุง) --- */
@@ -466,11 +555,17 @@ body {
 	:root {
 		--bg: #f7f8fb;
 		--card: #ffffff;
+		--card-bg: #ffffff;
 		--text: #0f172a;
 		--muted: #475569;
 		--brand: #6d28d9;
 		--brand-2: #0ea5e9;
+		--accent: #6d28d9;
 		--ring: rgba(59, 130, 246, 0.35);
+		--shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+		--shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+		--border-radius: 16px;
+		--border-radius-sm: 8px;
 	}
 	.nav.is-scrolled {
 		background: rgba(255, 255, 255, 0.85);
@@ -494,8 +589,73 @@ body {
 		border-color: rgba(15, 23, 42, 0.08);
 	}
 	.skill-tags li img {
-		filter: invert(1); /* ทำให้โลโก้ขาวเห็นบนพื้นหลังสว่าง (ต้องเช็คอีกที) */
+		filter: invert(1);
 	}
+	.card-img {
+		background: rgba(15, 23, 42, 0.04);
+	}
+	.card-tag {
+		background: rgba(109, 40, 217, 0.08);
+		color: #7c3aed;
+		border-color: rgba(109, 40, 217, 0.2);
+	}
+	.card-tag.tag-green {
+		background: rgba(5, 150, 105, 0.08);
+		color: #059669;
+		border-color: rgba(5, 150, 105, 0.2);
+	}
+	.card-tag.tag-blue {
+		background: rgba(37, 99, 235, 0.08);
+		color: #2563eb;
+		border-color: rgba(37, 99, 235, 0.2);
+	}
+	.card-tag.tag-cyan {
+		background: rgba(8, 145, 178, 0.08);
+		color: #0891b2;
+		border-color: rgba(8, 145, 178, 0.2);
+	}
+	.card-tag.tag-amber {
+		background: rgba(217, 119, 6, 0.08);
+		color: #b45309;
+		border-color: rgba(217, 119, 6, 0.2);
+	}
+	.card-tag.tag-pink {
+		background: rgba(219, 39, 119, 0.08);
+		color: #db2777;
+		border-color: rgba(219, 39, 119, 0.2);
+	}
+	.card-tag.tag-red {
+		background: rgba(220, 38, 38, 0.08);
+		color: #dc2626;
+		border-color: rgba(220, 38, 38, 0.2);
+	}
+	.card-tag.tag-purple {
+		background: rgba(109, 40, 217, 0.08);
+		color: #7c3aed;
+		border-color: rgba(109, 40, 217, 0.2);
+	}
+}
+
+/* --- Experience & Education inline-style replacements --- */
+.exp-title {
+	font-weight: 700;
+	color: var(--text);
+}
+.exp-subtitle {
+	font-weight: 400;
+	color: var(--muted);
+	display: block;
+}
+.exp-detail {
+	font-weight: 400;
+	color: var(--muted);
+	display: block;
+	font-size: 14px;
+	margin-top: 4px;
+}
+.exp-heading {
+	font-weight: 600;
+	margin-top: 16px;
 }
 
 .details-list {
@@ -516,9 +676,6 @@ body {
 	}
 	#experience .grid .card:nth-child(2) {
 		grid-column: span 8; /* Education */
-	}
-	.card-placeholder {
-		display: none !important; /* ซ่อนตัว placeholder ในจอใหญ่ */
 	}
 }
 
