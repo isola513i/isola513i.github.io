@@ -10,7 +10,7 @@ const closeMenu = () => {
 
 btn?.addEventListener("click", () => {
   const isOpen = links?.classList.toggle("open");
-  btn.classList.toggle("active");
+  btn?.classList.toggle("active");
   document.body.classList.toggle("menu-open", isOpen);
 });
 
@@ -73,11 +73,11 @@ toggleBtn?.addEventListener("click", () => {
   projectsSection?.classList.toggle("show-all");
   const expanded = projectsSection?.classList.contains("show-all");
   const lang = document.documentElement.lang || "en";
-  toggleBtn.textContent =
+  if (toggleBtn) toggleBtn.textContent =
     translations[lang][
       expanded ? "projects.toggle.hide" : "projects.toggle.show"
     ];
-  const grid = projectsSection.querySelector(".grid");
+  const grid = projectsSection?.querySelector(".grid");
   if (grid) grid.scrollLeft = 0;
 });
 
@@ -172,7 +172,7 @@ const translations = {
     "skills.title": "Skills",
     "contact.title": "Contact",
     "contact.text":
-      "I'm currently looking for new opportunities, my inbox always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+      "I'm currently looking for new opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
     "footer.text":
       '© <span id="year"></span> Personal Portfolio by Nattapat Lamnui. All rights reserved.',
   },
@@ -314,6 +314,7 @@ function applyLang(lang, animate = false) {
 
   // fade out → apply → fade in
   const main = document.querySelector("main");
+  if (!main) { doApply(); return; }
   main.style.transition = "opacity 0.15s ease";
   main.style.opacity = "0";
   setTimeout(() => {
