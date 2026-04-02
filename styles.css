@@ -531,6 +531,38 @@ body {
 	color: var(--muted);
 }
 
+/* Back to Top */
+.back-to-top {
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width: 48px;
+	height: 48px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--brand);
+	color: #fff;
+	font-size: 1.4rem;
+	border-radius: 50%;
+	text-decoration: none;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s, transform 0.3s;
+	transform: translateY(10px);
+	box-shadow: var(--shadow-md);
+	z-index: 90;
+}
+.back-to-top.visible {
+	opacity: 1;
+	pointer-events: auto;
+	transform: translateY(0);
+}
+.back-to-top:hover {
+	background: var(--brand-2);
+	transform: translateY(-2px);
+}
+
 /* Responsive */
 @media (min-width: 769px) {
 	.card {
