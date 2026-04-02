@@ -86,15 +86,15 @@ body {
 .nav-toggle {
 	display: none;
 	position: absolute;
-	right: 12px;
+	right: 4px;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 24px;
-	height: 20px;
+	width: 44px;
+	height: 44px;
 	cursor: pointer;
 	background: transparent;
 	border: none;
-	padding: 0;
+	padding: 10px;
 	z-index: 10000;
 }
 
@@ -198,7 +198,10 @@ body {
 	background: transparent;
 	color: var(--text);
 	border: 1px solid rgba(255, 255, 255, 0.16);
-	padding: 6px 12px;
+	padding: 8px 14px;
+	min-height: 40px;
+	display: inline-flex;
+	align-items: center;
 	border-radius: 8px;
 	font-weight: 700;
 	font-size: 13px;
@@ -222,6 +225,7 @@ body {
 @media (max-width: 900px) {
 	.nav {
 		grid-template-columns: auto 1fr auto;
+		z-index: auto;
 	}
 
 	/* ---- Fullscreen overlay (Apple-style) ---- */
@@ -670,6 +674,57 @@ body {
 .back-to-top:hover {
 	background: var(--brand-2);
 	transform: translateY(-2px);
+}
+
+/* ---------- Mobile Responsive ---------- */
+@media (max-width: 768px) {
+	/* 1. Touch targets — min 44px */
+	.btn {
+		min-height: 44px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.card-actions .btn {
+		min-height: 44px;
+	}
+
+	/* 2. Contact links stack vertically */
+	.contact-list {
+		flex-direction: column;
+		gap: 14px;
+	}
+
+	/* 3. Skills tag spacing */
+	.skill-tags {
+		gap: 0.75rem;
+	}
+	.skill-tag {
+		padding: 0.65rem 1.2rem;
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 480px) {
+	/* 4. Back-to-top smaller on very small screens */
+	.back-to-top {
+		bottom: 1rem;
+		right: 1rem;
+		width: 42px;
+		height: 42px;
+		font-size: 1.2rem;
+	}
+
+	/* 5. Footer clearance for back-to-top */
+	.footer {
+		padding-bottom: 100px;
+	}
+
+	/* 6. Hero tighter on small phones */
+	.hero {
+		padding-top: 100px;
+		padding-bottom: 20px;
+	}
 }
 
 /* Responsive */
